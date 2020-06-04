@@ -1,1 +1,27 @@
-<p>patient works!</p>
+<div class="row patient " >
+    <div class="col-sm-2 offset-sm-2 pr-2 text-right align-self-center">
+        <img [alt]="patient.name" class="img-thumbnail  rounded-circle"
+         [src]="patient.imageUrl" />
+
+    </div>
+    <div class="col-sm pl-0 pt-2">
+       <h3>{{patient.name}}</h3>
+        <p>
+            <span>{{patient.gender}}</span>
+            &nbsp;
+            <span>{{patient.birthDate}}</span>
+            &nbsp;
+            <span>{{patient.age}}</span>
+        </p>
+        <p>
+            <span>MRN: {{patient.mrn}}</span>
+            &nbsp;
+            <span>PVR No: {{patient.pvrNo}}</span>
+        </p>
+        
+        <p>
+            <span>Dr. {{patient.doctor}}</span>
+        </p>
+
+    </div>
+</div>

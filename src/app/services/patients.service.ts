@@ -69,6 +69,6 @@ export class PatientsService {
     },
   
   ];
-    
+    return res;
   }
 }
