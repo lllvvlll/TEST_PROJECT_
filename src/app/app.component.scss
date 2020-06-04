@@ -192,3 +192,21 @@ nav.navbar ul li a i:before {
     
     min-width: 100px;
 }
+
+#sidebar {
+    min-width: 266px;
+    max-width: 266px;
+    margin-top: 75px;
+    height:100%;
+    background-color: #32a099;
+    position: fixed;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+#sidebar li{
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255);
+}
