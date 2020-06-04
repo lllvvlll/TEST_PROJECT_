@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Patient } from 'src/models/patient';
+import { PatientsService } from '../services/patients.service';
 
 @Component({
   selector: 'app-cardiology-form',
@@ -7,7 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardiologyFormComponent implements OnInit {
 
-  constructor() { }
+  patient: any;
+  constructor(private activatedRouter:ActivatedRoute, private patientService: PatientsService) { 
+     this.activatedRouter.queryParams.subscribe(res => {
+        console.log("res",res.id);
+        this.patient = this.patientService.getPatientsMocked().find(item => item.id == res.id);
+        console.log("patient",this.patient);
+
+      })
+
+  }
 
   ngOnInit() {
   }

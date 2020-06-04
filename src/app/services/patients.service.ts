@@ -35,7 +35,7 @@ export class PatientsService {
       imageUrl:"https://www.tubefilter.com/wp-content/uploads/2019/11/dobrik-people.jpg",
     },
     {
-      id:1,
+      id:3,
       name:"Jennifer Dezousa Labadia",
       age:"26Y 12M 6D",
       birthDate:"19-02-1993",
@@ -46,7 +46,7 @@ export class PatientsService {
       imageUrl:"https://www.tubefilter.com/wp-content/uploads/2019/11/dobrik-people.jpg",
     },
     {
-      id:1,
+      id:4,
       name:"Jennifer Dezousa Labadia",
       age:"26Y 12M 6D",
       birthDate:"19-02-1993",
@@ -57,7 +57,7 @@ export class PatientsService {
       imageUrl:"https://www.tubefilter.com/wp-content/uploads/2019/11/dobrik-people.jpg",
     },
     {
-      id:1,
+      id:5,
       name:"Jennifer Dezousa Labadia",
       age:"26Y 12M 6D",
       birthDate:"19-02-1993",
