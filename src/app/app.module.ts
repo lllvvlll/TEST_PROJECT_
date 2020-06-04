@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { PatientsListComponent } from './patients-list/patients-list.component';
 import { PatientComponent } from './components/patient/patient.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
