@@ -1,6 +1,6 @@
 <div class="row patient-list">
 <ng-container *ngFor="let patient of patients">
-        <div class="col-sm-5">
+        <div class="col-sm-5" [routerLink]="['/cardiology-form']">
             <app-patient [patient]="patient"></app-patient>
         </div>
 </ng-container>

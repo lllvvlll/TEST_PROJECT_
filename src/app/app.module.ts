@@ -7,12 +7,14 @@ import { PatientsListComponent } from './patients-list/patients-list.component';
 import { PatientComponent } from './components/patient/patient.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CardiologyFormComponent } from './cardiology-form/cardiology-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientsListComponent,
-    PatientComponent
+    PatientComponent,
+    CardiologyFormComponent
   ],
   imports: [
     BrowserModule,
