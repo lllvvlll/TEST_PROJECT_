@@ -97,6 +97,7 @@
         padding: 0.5em;
         .nav-item {
             margin-left: 1.5rem;
+            min-width: 100px;
         }
     }
     a.nav-link {
@@ -171,4 +172,23 @@ nav.navbar ul li a i:before {
 }
 .navbar{
     padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: 0 6px 6px -6px #00000030;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    z-index: 111;
+    right: 0;
+    left: 0;
+}
+
+.nav-image{
+    width: 35px;
+    display: block;
+}
+.nav-item {
+    
+    min-width: 100px;
 }
