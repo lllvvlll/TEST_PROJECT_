@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NRCDemo"
+    }
+  },
+  "defaultProject": "NRCDemo",
+  "cli": {
+    "analytics": false
+  }
 }
