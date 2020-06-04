@@ -9,7 +9,7 @@ export class PatientsService {
 
   constructor() { }
 
-  getPatientsMocked() {
+  getPatientsMocked() : Patient[] {
     let res: Patient[];
     res = [
       {
