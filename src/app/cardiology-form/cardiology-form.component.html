@@ -1,0 +1,201 @@
+<div class="right-contentArea">
+    <div class="jh-card">
+        <!--  <h1 class="pagetitle">Add Patient</h1>  -->
+        <div id="personalInformation">
+            <!-- <h2 class="sub_title m-0 pt-0">Personal Information</h2>  -->
+            <h2 class="sub_title bb-1 pt-0">Personal Information</h2>
+            <div class="alert alert-success" *ngIf="success">
+                <strong>Settings saved!</strong>
+            </div>
+            <form name="editForm" role="form"     >
+                <!--  into H@ jhiTranslate="ppmsApp.accumedPatient.home.createOrEditLabel" -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <section class="section-default" id="secPatientDetails">
+                            <h2 class="anchorSubTitle">Patient Details</h2>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="mrn">Medical
+                                                    Record Number
+                                                </label> <input type="text" class="form-control" required name="mrn" id="mrn"
+                                
+                                                 />
+                                                <div
+                                                   >
+                                                    <small class="form-text text-danger"
+                                                       >Please enter a valid input. </small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--  end col 4 -->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="patientName">First
+                                                    Name <span class='required'>*</span>
+                                                </label> <input type="text" class="form-control"
+                                                    (keypress)="textwithAlphanumbericOnly($event)" name="patientName"
+                                                    id="patientName" required
+                                                    
+                                                    maxlength="100" />
+                                                <div>
+                                                    <!-- <small class="form-text text-danger"
+                                                        >Please enter a valid input.</small> -->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!--  end col 4 -->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label"
+                                                    for="field_patientMiddlename">Middle Name</label> <input
+                                                    type="text" class="form-control" name="patientMiddleName"
+                                                    id="field_patientMiddlename"
+                                                  
+                                                    maxlength="100" />
+                                                <div>
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--  end col 4 -->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+
+                                                <label class="form-control-label" for="patientSurname">Last
+                                                    Name <span class='required'>*</span>
+                                                </label> <input type="text" class="form-control"
+                                                    name="patientSurname" id="patientSurname"
+                                                   
+                                                   
+                                    
+                                                    maxlength="100" />
+                                                <div>
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--  end col 4 -->
+
+                                    </div>
+                                    <div class="row mrgnT15">
+
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="dateOfBirth">Birth
+                                                    Date <span class='required'>*</span>
+                                                </label>
+                                                <!-- <div class="input-group birthDatefield">
+                                                    <input id="dateOfBirth" type="text" class="form-control"
+                                                        name="dateOfBirth" ngbDatepicker maxDate="50"
+                                                        #dateOfBirthDp="ngbDatepicker" placeholder="DD/MM/YYYY"
+                                                        [minDate]="{year: 1901, month: 1, day: 1}"
+                                                        [markDisabled]="isDisabled" #dobInput="ngModel"
+                                                        (keypress)="dateValidation($event)"
+                                                        (ngModelChange)="onChange($event)"
+                                                        maxlength="10"
+                                                        [maxDate]="maxDate"
+                                                        [(ngModel)]="accumedPatient.dateOfBirth" required />
+                                                    <button type="button" class="btn btn-link"
+                                                       >
+                                                        <fa-icon [icon]="'calendar-alt'"></fa-icon>
+                                                    </button>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text" id="birthYear"
+                                                            style="min-width: 86px;">2000 Years</span>
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div *ngIf="dobInput.dirty && dobInput.invalid">
+                                                    <small class="form-text text-danger"
+                                                        *ngIf="dobInput.errors.required">Please enter a valid input.</small>
+                                                    <small class="form-text text-danger" 	*ngIf="!dobInput.errors.required">Please enter in dd/mm/yyyy format.</small>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!--  end col -->
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="genderId" class="form-control-label">Gender
+                                                    <span class='required'>*</span>
+                                                </label> <select class="form-control" id="genderId" required
+                                                   
+                                                    name="genderId">
+                                                    <option [ngValue]="undefined" selected>Select</option>
+                                                    <option *ngFor="let genderData of genderList"
+                                                        value="{{genderData.id}}">{{genderData.title}}</option>
+                                                </select>
+
+                                                <div *ngIf="genderInput.dirty && genderInput.invalid">
+                                                    <small class="form-text text-danger"
+                                                        *ngIf="genderInput.errors.required">Please select a valid input.</small>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!--  end col -->
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="accumedPatient.martialStatus"
+                                                    class="form-control-label">Marital Status</label> <select
+                                                    class="form-control" name="accumedPatient.martialStatus"
+                                                    id="accumedPatient.martialStatus"
+                                                    [(ngModel)]="accumedPatient.martialStatus">
+                                                    <option [ngValue]="undefined" selected>Select</option>
+                                                    <option *ngFor="let marital of maritalStatusList"
+                                                        value="{{marital.id}}">{{marital.title}}</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                            
+                                                <label for="accumedPatient.nationality"
+                                                    class="form-control-label">Nationality</label> <select
+                                                    class="form-control" name="accumedPatient.nationality"
+                                                    id="accumedPatient.nationality"
+                                                  >
+                                                    <option [ngValue]="undefined" selected>Select</option>
+                                                    <option *ngFor="let nationality of nationalitiesList"
+                                                        value="{{nationality.id}}">{{nationality.title}}</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <!--  end row -->
+
+                                    <div class="row mrgnT15">
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="language" class="form-control-label">Language
+                                                </label> <select class="form-control" id="field_language"
+                                                 name="language">
+                                                    <option [ngValue]="undefined" selected>Select</option>
+                                                    <option *ngFor="let language of languageList"
+                                                        value="{{language.id}}">{{language.title}}</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <!--  end col -->
+                                    </div>
+                                    <!--  end row -->
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+       
+                <hr />
+       
+        </form>
+
+        <!-- end personalInformation -->
+        <!-- end insuranceInformation -->
+    </div>
+    <!--  end card -->
+</div>

@@ -1,6 +1,7 @@
-
-
-<ng-container  *ngFor="let patient of patients">
-<app-patient [patient]="patient"></app-patient>
-  
+<div class="row patient-list">
+<ng-container *ngFor="let patient of patients">
+        <div class="col-sm-5" [routerLink]="['/cardiology-form']">
+            <app-patient [patient]="patient"></app-patient>
+        </div>
 </ng-container>
+</div>
