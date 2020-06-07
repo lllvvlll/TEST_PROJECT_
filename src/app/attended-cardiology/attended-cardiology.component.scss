@@ -1,0 +1,60 @@
+
+table thead td {
+    background-color: #26b8ae !important;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+table tbody th {
+    background-color: #26b8ae !important;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+th {
+    white-space: nowrap; 
+    max-width: 20%;   //or adjust for however wide you want max width to be, 
+                        //could also use % widths like max-width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+td input{
+    max-width: 50px;
+    padding: 0px;
+    max-height: 30px;
+    margin-bottom: 7px;
+    margin-right: -10px;
+}
+td{
+    text-align: center; 
+    vertical-align: middle;
+}
+table td , table th{
+    padding: 5px !important;
+    padding-bottom: 0px !important;
+}
+.appointments-link {
+    color: #26b8ae;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #26b8ae !important;
+    background-color: #26b8ae;
+    border-color: #26b8ae;
+}
+
+.modal-table thead th {
+    background-color: #26b8ae !important;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
