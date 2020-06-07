@@ -1,178 +1,176 @@
-<div class="fixed">
-    <app-patient [patient]="patient" ></app-patient>
-</div>
+<!-- <div class="fixed">
+    <app-patient [patient]="patient"></app-patient>
+</div> -->
 
 <div class="right-contentArea">
     <div class="jh-card">
         <!--  <h1 class="pagetitle">Add Patient</h1>  -->
         <div id="personalInformation">
             <!-- <h2 class="sub_title m-0 pt-0">Personal Information</h2>  -->
-            <h2 class="sub_title bb-1 pt-0">Personal Information</h2>
+            <!-- <h2 class="sub_title bb-1 pt-0">Personal Information</h2> -->
             <div class="alert alert-success" *ngIf="success">
                 <strong>Settings saved!</strong>
             </div>
-            <form name="editForm" role="form"     >
+            <form name="editForm" role="form">
                 <!--  into H@ jhiTranslate="ppmsApp.accumedPatient.home.createOrEditLabel" -->
-                <div class="row">
+                <div class="row pt-5">
                     <div class="col-md-12">
-                        <section class="section-default" id="secPatientDetails">
-                            <h2 class="anchorSubTitle">Patient Details</h2>
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="mrn">Medical
-                                                    Record Number
-                                                </label> <input type="text" class="form-control" required name="mrn" id="mrn"
-                                
-                                                 />
-                                                <div>
-                                                    <!-- <small class="form-text text-danger"
+                        <!-- <section class="section-default" id="secPatientDetails"> -->
+                        <!-- <h2 class="anchorSubTitle">Patient Details</h2> -->
+                        <div class="panel panel-default">
+                            <div class="panel-body small-fields">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="mrn">Temp
+                                            </label>
+                                            <input type="text" class="form-control" required name="mrn" id="mrn" />
+                                            <span>C</span>
+                                            <div>
+                                                <!-- <small class="form-text text-danger"
                                                        >Please enter a valid input. </small> -->
-                                                </div>
                                             </div>
                                         </div>
-
-                                        <!--  end col 4 -->
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="patientName">First
-                                                    Name <span class='required'>*</span>
-                                                </label> <input type="text" class="form-control"
-                                                    (keypress)="textwithAlphanumbericOnly($event)" name="patientName"
-                                                    id="patientName" required
-                                                    
-                                                    maxlength="100" />
-                                                <div>
-                                                    <!-- <small class="form-text text-danger"
-                                                        >Please enter a valid input.</small> -->
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <!--  end col 4 -->
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="form-control-label"
-                                                    for="field_patientMiddlename">Middle Name</label> <input
-                                                    type="text" class="form-control" name="patientMiddleName"
-                                                    id="field_patientMiddlename"
-                                                  
-                                                    maxlength="100" />
-                                                <div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--  end col 4 -->
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-
-                                                <label class="form-control-label" for="patientSurname">Last
-                                                    Name <span class='required'>*</span>
-                                                </label> <input type="text" class="form-control"
-                                                    name="patientSurname" id="patientSurname"
-                                                   
-                                                   
-                                    
-                                                    maxlength="100" />
-                                                <div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!--  end col 4 -->
-
                                     </div>
-                                    <div class="row mrgnT15">
 
+                                    <!--  end col 4 -->
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="patientName">Pulse
+                                                <!-- <span class='required'>*</span> -->
+                                            </label>
+                                            <input type="text" class="form-control" name="patientName" id="patientName"
+                                                required maxlength="100" />
+                                            <span>/min</span>
+                                        </div>
+                                    </div>
+                                    <!--  end col 4 -->
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="field_patientMiddlename">R.R</label>
+                                            <input type="text" class="form-control" name="patientMiddleName"
+                                                id="field_patientMiddlename" maxlength="100" />
+                                            <span>/min</span>
+                                            <div>
 
-                                        <div class="col-md-3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  end col 4 -->
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+
+                                            <label class="form-control-label" for="patientSurname">Systolic
+                                                <!-- <span class='required'>*</span> -->
+                                            </label>
+                                            <input type="text" class="form-control" name="patientSurname"
+                                                id="patientSurname" maxlength="100" />
+                                            <span>mmHg</span>
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+
+                                            <label class="form-control-label" for="patientSurname">Diastolic
+                                                <!-- <span class='required'>*</span> -->
+                                            </label>
+                                            <input type="text" class="form-control" name="patientSurname"
+                                                id="patientSurname" maxlength="100" />
+                                            <span>mmHg</span>
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row pl-3">
+                                        <div class="col-md-2">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="dateOfBirth">Birth
-                                                    Date <span class='required'>*</span>
+
+                                                <label class="form-control-label" for="patientSurname">O2SAT
+                                                    <!-- <span class='required'>*</span> -->
                                                 </label>
-                                                <!-- <div class="input-group birthDatefield">
-                                                    <input id="dateOfBirth" type="text" class="form-control"
-                                                        name="dateOfBirth" ngbDatepicker maxDate="50"
-                                                        #dateOfBirthDp="ngbDatepicker" placeholder="DD/MM/YYYY"
-                                                        [minDate]="{year: 1901, month: 1, day: 1}"
-                                                        [markDisabled]="isDisabled" #dobInput="ngModel"
-                                                        (keypress)="dateValidation($event)"
-                                                        (ngModelChange)="onChange($event)"
-                                                        maxlength="10"
-                                                        [maxDate]="maxDate"
-                                                        [(ngModel)]="accumedPatient.dateOfBirth" required />
-                                                    <button type="button" class="btn btn-link"
-                                                       >
-                                                        <fa-icon [icon]="'calendar-alt'"></fa-icon>
-                                                    </button>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text" id="birthYear"
-                                                            style="min-width: 86px;">2000 Years</span>
-                                                    </div>
-                                                </div> -->
-                                                <!-- <div *ngIf="dobInput.dirty && dobInput.invalid">
-                                                    <small class="form-text text-danger"
-                                                        *ngIf="dobInput.errors.required">Please enter a valid input.</small>
-                                                    <small class="form-text text-danger" 	*ngIf="!dobInput.errors.required">Please enter in dd/mm/yyyy format.</small>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                        <!--  end col -->
-                                        <!-- <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="genderId" class="form-control-label">Gender
-                                                    <span class='required'>*</span>
-                                                </label> <select class="form-control" id="genderId" required
-                                                   
-                                                    name="genderId">
-                                                    <option [ngValue]="undefined" selected>Select</option>
-                                                    <option *ngFor="let genderData of genderList"
-                                                        value="{{genderData.id}}">{{genderData.title}}</option>
-                                                </select>
+                                                <input type="text" class="form-control" name="patientSurname"
+                                                    id="patientSurname" maxlength="100" />
+                                                <span>%</span>
+                                                <div>
 
-                                                <div *ngIf="genderInput.dirty && genderInput.invalid">
-                                                    <small class="form-text text-danger"
-                                                        *ngIf="genderInput.errors.required">Please select a valid input.</small>
                                                 </div>
                                             </div>
-                                        </div> -->
-                                        <!--  end col -->
-                                        <!-- <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="accumedPatient.martialStatus"
-                                                    class="form-control-label">Marital Status</label> <select
-                                                    class="form-control" name="accumedPatient.martialStatus"
-                                                    id="accumedPatient.martialStatus"
-                                                    [(ngModel)]="accumedPatient.martialStatus">
-                                                    <option [ngValue]="undefined" selected>Select</option>
-                                                    <option *ngFor="let marital of maritalStatusList"
-                                                        value="{{marital.id}}">{{marital.title}}</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="col-md-3">
-                                            <div class="form-group">
-                                            
-                                                <label for="accumedPatient.nationality"
-                                                    class="form-control-label">Nationality</label> <select
-                                                    class="form-control" name="accumedPatient.nationality"
-                                                    id="accumedPatient.nationality"
-                                                  >
-                                                    <option [ngValue]="undefined" selected>Select</option>
-                                                    <option *ngFor="let nationality of nationalitiesList"
-                                                        value="{{nationality.id}}">{{nationality.title}}</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                    <!--  end row -->
+                                        </div>
 
-                                    <div class="row mrgnT15">
-                                        <!-- <div class="col-md-3">
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+
+                                                <label class="form-control-label" for="patientSurname">A.G
+                                                    <!-- <span class='required'>*</span> -->
+                                                </label> <input type="text" class="form-control" name="patientSurname"
+                                                    id="patientSurname" maxlength="100" />
+                                                <span>cm</span>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+
+                                                <label class="form-control-label" for="patientSurname">Height
+                                                    <!-- <span class='required'>*</span> -->
+                                                </label> <input type="text" class="form-control" name="patientSurname"
+                                                    id="patientSurname" maxlength="100" />
+                                                <span>cm</span>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+
+                                                <label class="form-control-label" for="patientSurname">Weight
+                                                    <!-- <span class='required'>*</span> -->
+                                                </label> <input type="text" class="form-control" name="patientSurname"
+                                                    id="patientSurname" maxlength="100" />
+                                                <span>kg</span>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+
+                                                <label class="form-control-label" for="patientSurname">BMA
+                                                    <!-- <span class='required'>*</span> -->
+                                                </label> <input type="text" class="form-control" name="patientSurname"
+                                                    id="patientSurname" maxlength="100" />
+                                                <span>kg/m2</span>
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--  end col 4 -->
+
+                                </div>
+
+                                <!--  end row -->
+
+                                <!-- <div class="row mrgnT15"> -->
+                                <!-- <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="language" class="form-control-label">Language
                                                 </label> <select class="form-control" id="field_language"
@@ -183,22 +181,391 @@
                                                 </select>
                                             </div>
                                         </div> -->
-                                        <!--  end col -->
-                                    </div>
-                                    <!--  end row -->
-                                </div>
+                                <!--  end col -->
+                                <!-- </div> -->
+                                <!--  end row -->
                             </div>
-                        </section>
+                        </div>
+                        <!-- </section> -->
 
                     </div>
                 </div>
-       
                 <hr />
-       
-        </form>
+                <div class="row mt-1">
+                    <div class="col-sm-4 chief-comp">
+                        <div class="form-group">
+                            <!-- <div class="input-group-prepend">
+                              <span class="input-group-text">With textarea</span>
+                            </div> -->
+                            <label class="form-control-label section-title">Chief Complaints & History of Present
+                                Illnessd</label>
+                            <textarea class="form-control" aria-label="With textarea" style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="section-title">Past Medical History </label>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Anemia
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                    <label class="form-check-label" for="defaultCheck2">
+                                        Diabetes Millitus
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                    <label class="form-check-label" for="defaultCheck3">
+                                        Tuberculosis
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                    <label class="form-check-label" for="defaultCheck4">
+                                        Cerebrovascular Accident
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                    <label class="form-check-label" for="defaultCheck5">
+                                        Valvular Heart Disease
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+                                    <label class="form-check-label" for="defaultCheck6">
+                                        Hypertension
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- </div>
+                        <div class="row"> -->
 
-        <!-- end personalInformation -->
-        <!-- end insuranceInformation -->
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+                                    <label class="form-check-label" for="defaultCheck7">
+                                        Thyroid Disorder
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+                                    <label class="form-check-label" for="defaultCheck8">
+                                        Renal Diseases
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+                                    <label class="form-check-label" for="defaultCheck9">
+                                        Ischemic Heart Disease
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
+                                    <label class="form-check-label" for="defaultCheck10">
+                                        Hypercholesterolemia
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-4">
+                                <label class="form-check-label">
+                                    Others, Specify
+                                </label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text" value="">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-4">
+                                <label class="form-che    ck-label" for="defaultCheck1">
+                                    Home Medications
+                                </label>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        None
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6 allergies">
+                        <div class="row mt-4">
+                            <div class="col-sm-4">
+                                <label class="section-title">Allergies</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Not Known
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        No Changes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-4">
+                                <select class="custom-select">
+                                    <option selected="" value="Allergy Type">Allergy Type</option>
+                                    <option class="u602_input_option" value="Allergic Asthma">Allergic Asthma</option>
+                                    <option value="Drug Allergy">Drug Allergy</option>
+                                    <option value="Dust Allergy">Dust Allergy</option>
+                                    <option value="Environmental Allergy">Environmental Allergy</option>
+                                    <option value="Food Allergy">Food Allergy</option>
+                                    <option value="Hay Fever">Hay Fever</option>
+                                    <option value="Insect Allergy">Insect Allergy</option>
+                                    <option value="Latex Allergy">Latex Allergy</option>
+                                    <option value="Mold Allergy">Mold Allergy</option>
+                                    <option value="Pet Allergy">Pet Allergy</option>
+                                    <option value="Pollen Allergy">Pollen Allergy</option>
+                                    <option value="Respiratory Allergy">Respiratory Allergy</option>
+                                    <option value="Skin Allergy">Skin Allergy</option>
+                                </select>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Allergies" aria-label="Amount (to the nearest dollar)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><img src="../assets/search.png" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="patientSurname"
+                                        placeholder="Kind of Reactions" id="patientSurname" maxlength="100" />
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Allergy Type</th>
+                                            <th scope="col">Allergies</th>
+                                            <th scope="col">Kind of Reactions</th>
+                                            <th scope="col">ICD(S)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                Food Allergy
+                                            </td>
+                                            <td>shell fish</td>
+                                            <td>Itching</td>
+                                            <td>Z91.013</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                Drug Alergy
+                                            </td>
+                                            <td>Penicillin</td>
+                                            <td>HIves, Swelling</td>
+                                            <td>Z88.0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="row mt-4">
+                            <div class="col-sm-4">
+                                <label class="section-title">Pain Assessments</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Pain Score:</label>
+                            </div>
+                            <div class="col-sm-1 pl-0">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
+                                <p class="pl-2"><span>0</span></p>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <p>Moderate pain</p>
+                                <p style="color: red;">Intervention Required</p>
+                            </div>
+
+
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-sm-2 pl-3">
+                                <span>Moderation pain</span>    
+                                <span>Intervention Required</span>    
+                          </div>
+                        </div> -->
+                        <div class="row">
+                            <!-- <div class="col-sm-6">
+                                <div class="row"> -->
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
+                                <p class="pl-2"><span>0</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_1_u475.svg" />
+                                <p class="pl-2"><span>1</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_3_u476.svg" />
+                                <p class="pl-2"><span>2</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_2_u477.svg" />
+                                <p class="pl-2"><span>3</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_4_u479.svg" />
+                                <p class="pl-2"><span>4</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_6_u478.svg" />
+                                <p class="pl-2"><span>5</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_5_u480.svg" />
+                                <p class="pl-2"><span>6</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_7_u481.svg" />
+                                <p class="pl-2"><span>7</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_8_u483.svg" />
+                                <p class="pl-2"><span>8</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_9_u482.svg" />
+                                <p class="pl-2"><span>9</span></p>
+                            </div>
+                            <div class="col-sm-1">
+                                <img id="u488_img" class="img"
+                                    src="../assets/nursing_assessment/pain_score_img_9_u482.svg" />
+                                <p class="pl-2"><span>10</span></p>
+                            </div>
+                            <div class="col-sm-4">
+                                <select class="custom-select">
+                                    <option class="u485_input_option" selected="" value="Pain Scale">Pain Scale</option>
+                                    <option class="u485_input_option" value="0">0</option>
+                                    <option class="u485_input_option" value="1">1</option>
+                                    <option class="u485_input_option" value="2">2</option>
+                                    <option class="u485_input_option" value="3">3</option>
+                                    <option class="u485_input_option" value="4">4</option>
+                                    <option class="u485_input_option" value="5">5</option>
+                                    <option class="u485_input_option" value="6">6</option>
+                                    <option class="u485_input_option" value="7">7</option>
+                                    <option class="u485_input_option" value="8">8</option>
+                                    <option class="u485_input_option" value="9">9</option>
+                                    <option class="u485_input_option" value="10">10</option>
+                                </select>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12 chief-comp">
+                        <div class="form-group">
+                            <!-- <div class="input-group-prepend">
+              <span class="input-group-text">With textarea</span>
+            </div> -->
+                            <label class="form-control-label section-title">Nurses Notes</label>
+                            <textarea class="form-control" aria-label="With textarea" style="height:200px"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- </div> -->
+
+                <!-- <hr /> -->
+
+            </form>
+
+            <!-- end personalInformation -->
+            <!-- end insuranceInformation -->
+        </div>
+        <!--  end card -->
     </div>
-    <!--  end card -->
-</div>
