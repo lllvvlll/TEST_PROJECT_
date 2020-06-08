@@ -75,11 +75,11 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
 
-                                            <label class="form-control-label" for="patientSurname">Diastolic
+                                            <label class="form-control-label" for="diastolicInput">Diastolic
                                                 <!-- <span class='required'>*</span> -->
                                             </label>
-                                            <input type="text" class="form-control" name="patientSurname"
-                                                id="patientSurname" maxlength="100" />
+                                            <input type="text" class="form-control" name="diastolicInput"
+                                                id="diastolicInput" maxlength="100" />
                                             <span>mmHg</span>
                                             <div>
 
@@ -90,11 +90,11 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">O2SAT
+                                                <label class="form-control-label" for="o2sat">O2SAT
                                                     <!-- <span class='required'>*</span> -->
                                                 </label>
-                                                <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                <input type="text" class="form-control" name="o2sat"
+                                                    id="o2sat" maxlength="100" />
                                                 <span>%</span>
                                                 <div>
 
@@ -106,10 +106,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">A.G
+                                                <label class="form-control-label" for="ag">A.G
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="ag"
+                                                    id="ag" maxlength="100" />
                                                 <span>cm</span>
                                                 <div>
 
@@ -120,10 +120,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">Height
+                                                <label class="form-control-label" for="height">Height
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="height"
+                                                    id="height" maxlength="100" />
                                                 <span>cm</span>
                                                 <div>
 
@@ -135,10 +135,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">Weight
+                                                <label class="form-control-label" for="weight">Weight
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="weight"
+                                                    id="weight" maxlength="100" />
                                                 <span>kg</span>
                                                 <div>
 
@@ -150,10 +150,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">BMA
+                                                <label class="form-control-label" for="bma">BMA
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="bma"
+                                                    id="bma" maxlength="100" />
                                                 <span>kg/m2</span>
                                                 <div>
 
@@ -197,9 +197,11 @@
                             <!-- <div class="input-group-prepend">
                               <span class="input-group-text">With textarea</span>
                             </div> -->
-                            <label class="form-control-label section-title">Chief Complaints & History of Present
+                            <label class="form-control-label section-title" for="chief-comp">Chief Complaints & History of Present
                                 Illnessd</label>
-                            <textarea class="form-control" aria-label="With textarea" style="height:200px"></textarea>
+                            <textarea class="form-control" aria-label="With textarea"
+                            id="chief-comp"
+                            style="height:200px"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -308,8 +310,8 @@
                             </div>
                             <div class="col-sm-7">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
+                                    <label class="form-check-label" for="defaultCheck11">
                                         None
                                     </label>
                                 </div>
@@ -338,8 +340,8 @@
                             <div class="col-sm-2">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                        id="exampleRadios2" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios2">
                                         No
                                     </label>
                                 </div>
@@ -347,8 +349,8 @@
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                        id="exampleRadios3" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios3">
                                         Not Known
                                     </label>
                                 </div>
@@ -356,8 +358,8 @@
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                        id="exampleRadios4" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios4">
                                         No Changes
                                     </label>
                                 </div>
@@ -399,6 +401,11 @@
 
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 offset-sm-4 text-center">
+                                <button class="btn btn-primary">Add</button>
                             </div>
                         </div>
                         <div class="row">
@@ -547,20 +554,144 @@
                 </div>
                 <hr />
                 <div class="row">
+                            <form class="p-3 mb-5 bg-white">
+                                <div class="row mb-2">
+                                    <div class="col-3 my-auto">
+                                         <label class="section-title">Fall Risk Assessment</label>       
+                                    </div>
+                                    <div class="col-4 my-auto">
+                                        [Modified Morse Fall Scale]
+                                    </div>
+                                    <div class="col-5">
+                                        Fall Risk Score: 75 <span style="color:red;">At Risk of Fall</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 my-auto">
+                                        Patient with special needs:
+                                    </div>
+                                    <div class="col-2">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Yes[25]</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3 my-auto">
+                                        Ambulatory aid:
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Bed rest/Nurse assist [0]</option>
+                                            <option>Crutches/Cane/Walker [15]</option>
+                                            <option>Furniture for support [30]</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 my-auto">
+                                        History of falling; immediate / within 3 months:
+                                    </div>
+                                    <div class="col-2">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Yes[25]</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3 my-auto">
+                                        IV/Heparin Lock:
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Yes[25]</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 my-auto">
+                                        Secondary diagnosis & post-operative immobilization:
+                                    </div>
+                                    <div class="col-2">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Yes[25]</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3 my-auto">
+                                        Gait/transfering:
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Normal/Bed rest/Immobile [0]</option>
+                                            <option>Weak [10]</option>
+                                            <option>Impaired [20]</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 my-auto">
+                                        Medication affecting balance/concentration:
+                                    </div>
+                                    <div class="col-2">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Yes[25]</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3 my-auto">
+                                        Mental Status:
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Oriented to own ability [0]</option>
+                                            <option>Weak [10]</option>
+                                            <option>Impaired [20]</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 my-auto">
+                                    </div>
+                                    <div class="col-2">
+                                    </div>
+                                    <div class="col-3 my-auto">
+                                    </div>
+                                    <!-- <div class="col-3">
+                                        <button type="button" class="btn btn-primary">Save</button>
+                                        &nbsp;
+                                        <button type="button" class="btn btn-primary">Clear</button>
+                                    </div> -->
+                                </div>
+                            </form>
+                    
+                </div>
+                <hr />
+                <div class="row">
                     <div class="col-sm-12 chief-comp">
                         <div class="form-group">
                             <!-- <div class="input-group-prepend">
               <span class="input-group-text">With textarea</span>
             </div> -->
-                            <label class="form-control-label section-title">Nurses Notes</label>
-                            <textarea class="form-control" aria-label="With textarea" style="height:200px"></textarea>
+                            <label class="form-control-label section-title" for="nurses-notes">Nurses Notes</label>
+                            <textarea class="form-control" aria-label="With textarea" id="nurses-notes" style="height:200px"></textarea>
                         </div>
                     </div>
                 </div>
-
-                <!-- </div> -->
-
-                <!-- <hr /> -->
+                <div class="row mb-5">
+                         <div class="col-sm-3 offset-sm-9">
+                                        <button type="button" class="btn btn-primary">Save</button>
+                                        &nbsp;
+                                        <button type="button" class="btn btn-primary">Clear</button>
+                            </div>
+                </div>
 
             </form>
 
