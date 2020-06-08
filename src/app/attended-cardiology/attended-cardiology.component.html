@@ -104,24 +104,163 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-2">
-                <div class="row pb-3">
-
-                    <span class="appointments-link" (click)="openFallRisk(content)">
-                        Fall Risk Assessment:
-                    </span>
-                </div>
-                <div class="row pb-3">
-                    Pain Assessment
-                </div>
+            <div class="col-7">
                 <div class="row">
-                    Home Medications
+                    <div class="col-5">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row pb-3">
+
+                            <span class="custom-link" (click)="openFallRisk(content)">
+                                Fall Risk Assessment:
+                            </span>
+                        </div>
+                        <div class="row pb-3">
+                            <span class="custom-link" (click)="openPainAssessment(painAssessment)">
+                                Pain Assessment
+                            </span>
+                        </div>
+                        <div class="row">
+                            Home Medications
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row pb-3">
+                            25 (14:10) 0 (13:15)
+                        </div>
+                        <div class="row pb-3">
+                            4 (14:10) 0 (13:15)
+                        </div>
+                        <div class="row">
+
+                        </div>
+                    </div>
+
                 </div>
+                <div class="col-sm-6 allergies">
+                        <div class="row mt-4">
+                            <div class="col-sm-4">
+                                <label class="section-title">Allergies</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Not Known
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        No Changes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-4">
+                                <select class="custom-select">
+                                    <option selected="" value="Allergy Type">Allergy Type</option>
+                                    <option class="u602_input_option" value="Allergic Asthma">Allergic Asthma</option>
+                                    <option value="Drug Allergy">Drug Allergy</option>
+                                    <option value="Dust Allergy">Dust Allergy</option>
+                                    <option value="Environmental Allergy">Environmental Allergy</option>
+                                    <option value="Food Allergy">Food Allergy</option>
+                                    <option value="Hay Fever">Hay Fever</option>
+                                    <option value="Insect Allergy">Insect Allergy</option>
+                                    <option value="Latex Allergy">Latex Allergy</option>
+                                    <option value="Mold Allergy">Mold Allergy</option>
+                                    <option value="Pet Allergy">Pet Allergy</option>
+                                    <option value="Pollen Allergy">Pollen Allergy</option>
+                                    <option value="Respiratory Allergy">Respiratory Allergy</option>
+                                    <option value="Skin Allergy">Skin Allergy</option>
+                                </select>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Allergies" aria-label="Amount (to the nearest dollar)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><img src="../assets/search.png" /></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="patientSurname"
+                                        placeholder="Kind of Reactions" id="patientSurname" maxlength="100" />
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Allergy Type</th>
+                                            <th scope="col">Allergies</th>
+                                            <th scope="col">Kind of Reactions</th>
+                                            <th scope="col">ICD(S)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td>
+                                                Food Allergy
+                                            </td>
+                                            <td>shell fish</td>
+                                            <td>Itching</td>
+                                            <td>Z91.013</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                Drug Alergy
+                                            </td>
+                                            <td>Penicillin</td>
+                                            <td>HIves, Swelling</td>
+                                            <td>Z88.0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
             </div>
+
             <!-- end col -->
         </div>
+
     </div>
 </div>
 
@@ -338,6 +477,102 @@
                 </tbody>
             </table>
         </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
+<ng-template #painAssessment let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Pain Assessment</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="shadow p-3 mb-5 bg-white rounded">
+            <div class="row mt-4">
+                <div class="col-sm-4">
+                    <label class="section-title">Pain Assessments</label>
+                </div>
+                <div class="col-sm-3">
+                    <label>Pain Score:</label>
+                </div>
+                <div class="col-sm-1 pl-0">
+                    <img id="u488_img" class="img" src="../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
+                    <p class="pl-2"><span>0</span></p>
+                </div>
+
+                <div class="col-sm-4">
+                    <p>Moderate pain</p>
+                    <p style="color: red;">Intervention Required</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
+                    <p class="pl-2"><span>0</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_1_u475.svg" />
+                    <p class="pl-2"><span>1</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_3_u476.svg" />
+                    <p class="pl-2"><span>2</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_2_u477.svg" />
+                    <p class="pl-2"><span>3</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_4_u479.svg" />
+                    <p class="pl-2"><span>4</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_6_u478.svg" />
+                    <p class="pl-2"><span>5</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_5_u480.svg" />
+                    <p class="pl-2"><span>6</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_7_u481.svg" />
+                    <p class="pl-2"><span>7</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_8_u483.svg" />
+                    <p class="pl-2"><span>8</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_9_u482.svg" />
+                    <p class="pl-2"><span>9</span></p>
+                </div>
+                <div class="col-sm-1">
+                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_9_u482.svg" />
+                    <p class="pl-2"><span>10</span></p>
+                </div>
+                <div class="col-sm-4">
+                    <select class="custom-select">
+                        <option class="u485_input_option" selected="" value="Pain Scale">Pain Scale</option>
+                        <option class="u485_input_option" value="0">0</option>
+                        <option class="u485_input_option" value="1">1</option>
+                        <option class="u485_input_option" value="2">2</option>
+                        <option class="u485_input_option" value="3">3</option>
+                        <option class="u485_input_option" value="4">4</option>
+                        <option class="u485_input_option" value="5">5</option>
+                        <option class="u485_input_option" value="6">6</option>
+                        <option class="u485_input_option" value="7">7</option>
+                        <option class="u485_input_option" value="8">8</option>
+                        <option class="u485_input_option" value="9">9</option>
+                        <option class="u485_input_option" value="10">10</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
 
     </div>
     <div class="modal-footer">
