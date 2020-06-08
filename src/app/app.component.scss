@@ -156,14 +156,18 @@ nav.navbar ul li a i:before {
 }
 
 .jh-logo-container {
-    background-color: #26b8ae;
+    background-color: #fff;
     height: 76px;
 
     .navbar-brand.logo {
-        background: url(../AccumedLogo.png) no-repeat 20% 37%;
+        background: url(../assets/nrcLogo.png) no-repeat 20% 37%;
         width: 250px;
-        height: 85px;
+        height: 64px;
         display: block;
+        background-repeat: no-repeat;
+        background-size: 100 100;
+        background-size: cover;
+        margin-top: 7px;
 
         // @media screen and (max-width: $mediaiPadWidth) {
         //     width: 150px;
