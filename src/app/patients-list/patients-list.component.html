@@ -1,6 +1,6 @@
 <div class="row patient-list">
 <ng-container *ngFor="let patient of patients">
-        <div class="col-sm-5" (click)="openCardiologyForm(patient)" [routerLink]="['/cardiology-form']" style="cursor: pointer; outline: none;">
+        <div class="col-sm-5" (click)="openAttendedCardiologyForm(patient)" [routerLink]="['/attended-cardiology-form']" style="cursor: pointer; outline: none;">
             <app-patient [patient]="patient"></app-patient>
         </div>
 </ng-container>

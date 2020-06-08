@@ -7,13 +7,17 @@ import { PatientsListComponent } from './patients-list/patients-list.component';
 import { PatientComponent } from './components/patient/patient.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CardiologyFormComponent } from './cardiology-form/cardiology-form.component';
+import { AttendedCardiologyComponent } from './attended-cardiology/attended-cardiology.component';
+import { AttendedFallRiskAssesmentComponent } from './attended-cardiology/attended-fall-risk-assesment/attended-fall-risk-assesment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientsListComponent,
     PatientComponent,
-    CardiologyFormComponent
+    CardiologyFormComponent,
+    AttendedCardiologyComponent,
+    AttendedFallRiskAssesmentComponent
   ],
   imports: [
     BrowserModule,
