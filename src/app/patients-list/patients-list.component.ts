@@ -25,4 +25,9 @@ export class PatientsListComponent implements OnInit {
         id: patient.id
       }})
   }
+  openAttendedCardiologyForm(patient: Patient){
+    this.router.navigate(["/attended-cardiology-form"],{queryParams: {
+      id: patient.id
+    }})
+}
 }
