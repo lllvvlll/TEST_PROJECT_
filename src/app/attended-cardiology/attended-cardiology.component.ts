@@ -13,8 +13,22 @@ export class AttendedCardiologyComponent implements OnInit {
   ngOnInit() {
   }
 
-  openFallRisk(content){
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',size: 'lg' }).result.then((result) => {
+  openFallRisk(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg', scrollable: true }).result.then((result) => {
+      // this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  openPainAssessment(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'lg' }).result.then((result) => {
+      // this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  openHomeMedications(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'xl', scrollable: true }).result.then((result) => {
       // this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
