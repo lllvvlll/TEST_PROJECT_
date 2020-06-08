@@ -75,11 +75,11 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
 
-                                            <label class="form-control-label" for="patientSurname">Diastolic
+                                            <label class="form-control-label" for="diastolicInput">Diastolic
                                                 <!-- <span class='required'>*</span> -->
                                             </label>
-                                            <input type="text" class="form-control" name="patientSurname"
-                                                id="patientSurname" maxlength="100" />
+                                            <input type="text" class="form-control" name="diastolicInput"
+                                                id="diastolicInput" maxlength="100" />
                                             <span>mmHg</span>
                                             <div>
 
@@ -90,11 +90,11 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">O2SAT
+                                                <label class="form-control-label" for="o2sat">O2SAT
                                                     <!-- <span class='required'>*</span> -->
                                                 </label>
-                                                <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                <input type="text" class="form-control" name="o2sat"
+                                                    id="o2sat" maxlength="100" />
                                                 <span>%</span>
                                                 <div>
 
@@ -106,10 +106,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">A.G
+                                                <label class="form-control-label" for="ag">A.G
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="ag"
+                                                    id="ag" maxlength="100" />
                                                 <span>cm</span>
                                                 <div>
 
@@ -120,10 +120,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">Height
+                                                <label class="form-control-label" for="height">Height
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="height"
+                                                    id="height" maxlength="100" />
                                                 <span>cm</span>
                                                 <div>
 
@@ -135,10 +135,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">Weight
+                                                <label class="form-control-label" for="weight">Weight
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="weight"
+                                                    id="weight" maxlength="100" />
                                                 <span>kg</span>
                                                 <div>
 
@@ -150,10 +150,10 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
 
-                                                <label class="form-control-label" for="patientSurname">BMA
+                                                <label class="form-control-label" for="bma">BMA
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="patientSurname"
-                                                    id="patientSurname" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="bma"
+                                                    id="bma" maxlength="100" />
                                                 <span>kg/m2</span>
                                                 <div>
 
@@ -197,9 +197,11 @@
                             <!-- <div class="input-group-prepend">
                               <span class="input-group-text">With textarea</span>
                             </div> -->
-                            <label class="form-control-label section-title">Chief Complaints & History of Present
+                            <label class="form-control-label section-title" for="chief-comp">Chief Complaints & History of Present
                                 Illnessd</label>
-                            <textarea class="form-control" aria-label="With textarea" style="height:200px"></textarea>
+                            <textarea class="form-control" aria-label="With textarea"
+                            id="chief-comp"
+                            style="height:200px"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -308,8 +310,8 @@
                             </div>
                             <div class="col-sm-7">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
+                                    <label class="form-check-label" for="defaultCheck11">
                                         None
                                     </label>
                                 </div>
@@ -338,8 +340,8 @@
                             <div class="col-sm-2">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                        id="exampleRadios2" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios2">
                                         No
                                     </label>
                                 </div>
@@ -347,8 +349,8 @@
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                        id="exampleRadios3" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios3">
                                         Not Known
                                     </label>
                                 </div>
@@ -356,8 +358,8 @@
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                        id="exampleRadios4" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios4">
                                         No Changes
                                     </label>
                                 </div>
@@ -552,8 +554,8 @@
                             <!-- <div class="input-group-prepend">
               <span class="input-group-text">With textarea</span>
             </div> -->
-                            <label class="form-control-label section-title">Nurses Notes</label>
-                            <textarea class="form-control" aria-label="With textarea" style="height:200px"></textarea>
+                            <label class="form-control-label section-title" for="nurses-notes">Nurses Notes</label>
+                            <textarea class="form-control" aria-label="With textarea" id="nurses-notes" style="height:200px"></textarea>
                         </div>
                     </div>
                 </div>
