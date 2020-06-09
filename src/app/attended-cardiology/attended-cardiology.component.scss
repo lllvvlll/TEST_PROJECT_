@@ -1,12 +1,12 @@
 
 table thead td {
-    background-color: #26b8ae !important;
+    background-color: #17A2B8 !important;
     color: #fff;
     font-weight: 400;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 table tbody th {
-    background-color: #26b8ae !important;
+    background-color: #17A2B8 !important;
     color: #fff;
     font-weight: 400;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -25,16 +25,16 @@ td input{
     margin-bottom: 7px;
     margin-right: -10px;
 }
-td{
-    text-align: center; 
-    vertical-align: middle;
-}
+// td{
+//     text-align: center; 
+//     vertical-align: middle;
+// }
 table td , table th{
     padding: 5px !important;
     padding-bottom: 0px !important;
 }
 .custom-link {
-    color: #26b8ae;
+    color: #17A2B8;
     text-decoration: underline;
     cursor: pointer;
     font-weight: 700;
@@ -47,9 +47,9 @@ table td , table th{
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #26b8ae !important;
-    background-color: #26b8ae;
-    border-color: #26b8ae;
+    background-color: #17A2B8 !important;
+    background-color: #17A2B8;
+    border-color: #17A2B8;
 }
 
 .modal-table thead th {

@@ -135,7 +135,7 @@ nav.navbar .navbar-nav li #account-menu {
 }
 
 nav.navbar ul li a i:before {
-    color: #26b8ae;
+    color: #17A2B8;
 }
 
 /* ==========================================================================
@@ -160,15 +160,16 @@ nav.navbar ul li a i:before {
     height: 76px;
 
     .navbar-brand.logo {
-        background: url(../assets/nrcLogo.png) no-repeat 20% 37%;
+        // background: url(../assets/nrcLogo.jpg) no-repeat 20% 37%;
+        background: url(../assets/nrcLogo.jpg) no-repeat;
         width: 250px;
         height: 64px;
         display: block;
         background-repeat: no-repeat;
         background-size: 100 100;
-        background-size: cover;
+        background-size: contain;
         margin-top: 7px;
-
+        background-position: right;
         // @media screen and (max-width: $mediaiPadWidth) {
         //     width: 150px;
         // }
@@ -202,7 +203,7 @@ nav.navbar ul li a i:before {
     max-width: 266px;
     margin-top: 75px;
     height:100%;
-    background-color: #32a099;
+    background-color: #17A2B8;
     position: fixed;
 }
 
@@ -213,4 +214,13 @@ nav.navbar ul li a i:before {
     padding: 8px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.65);
     color: rgba(255, 255, 255);
+    
 }
+
+@font-face{
+    font-family: "Century Gothic" ;
+    src: url("../assets/fonts/Century Gothic 400.ttf") format(true type);
+}
+  *{
+          font-family: "Century Gothic";
+      }
