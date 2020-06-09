@@ -161,7 +161,7 @@ nav.navbar ul li a i:before {
 
     .navbar-brand.logo {
         // background: url(../assets/nrcLogo.jpg) no-repeat 20% 37%;
-        background: url(../assets/nrcLogo.jpg) no-repeat;
+        background: url(../assets/nrcLogo.png) no-repeat;
         width: 250px;
         height: 64px;
         display: block;
@@ -169,7 +169,7 @@ nav.navbar ul li a i:before {
         background-size: 100 100;
         background-size: contain;
         margin-top: 7px;
-        background-position: right;
+        background-position: center;
         // @media screen and (max-width: $mediaiPadWidth) {
         //     width: 150px;
         // }
