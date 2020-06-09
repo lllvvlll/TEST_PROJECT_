@@ -14,8 +14,8 @@ export class CardiologyFormComponent implements OnInit {
   constructor(private activatedRouter:ActivatedRoute, private patientService: PatientsService) { 
      this.activatedRouter.queryParams.subscribe(res => {
         console.log("res",res.id);
-        this.patient = this.patientService.getPatientsMocked().find(item => item.id == res.id);
-        console.log("patient",this.patient);
+        // this.patient = this.patientService.getPatientsMocked().find(item => item.id == res.id);
+        // console.log("patient",this.patient);
 
       })
 
