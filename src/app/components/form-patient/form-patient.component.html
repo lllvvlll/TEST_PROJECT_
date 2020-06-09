@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-2">
+        <img [alt]="patient.name" class="img-thumbnail  rounded-circle" [src]="patient.imageUrl" />
+    </div>
+    <div class="col-sm-3 border-left">
+        Patient:
+        <div>{{patient.name}}</div>
+        <div>{{patient.gender}}</div>
+    </div>
+    <div class="col-sm-2 border-left">
+        <div>MRN: {{patient.mrn}}</div>
+        <div>PVR No: {{patient.pvrNo}}</div>
+    </div>
+    <div class="col-sm-2 border-left">
+        <div>{{patient.birthDate}}</div>
+        <div>{{patient.age}}</div>
+    </div>
+    <div class="col-sm-2 border-left">
+        Dr. {{patient.doctor}}
+    </div>
+</div>

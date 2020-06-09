@@ -9,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CardiologyFormComponent } from './cardiology-form/cardiology-form.component';
 import { AttendedCardiologyComponent } from './attended-cardiology/attended-cardiology.component';
 import { AttendedFallRiskAssesmentComponent } from './attended-cardiology/attended-fall-risk-assesment/attended-fall-risk-assesment.component';
+import { FormPatientComponent } from './components/form-patient/form-patient.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AttendedFallRiskAssesmentComponent } from './attended-cardiology/attend
     PatientComponent,
     CardiologyFormComponent,
     AttendedCardiologyComponent,
-    AttendedFallRiskAssesmentComponent
+    AttendedFallRiskAssesmentComponent,
+    FormPatientComponent
   ],
   imports: [
     BrowserModule,
