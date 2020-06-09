@@ -11,8 +11,10 @@ import { RouterLink, Router } from '@angular/router';
 export class PatientsListComponent implements OnInit {
 
   patients: Patient[];
+
+  selectedTab: string = "queue";
   constructor(private patientsService: PatientsService, private router: Router) {
-    this.patients = this.patientsService.getPatientsMocked();
+    this.patients = this.patientsService.getPatientsMocked(this.selectedTab);
     console.log("patients",this.patients);
    }
 
@@ -26,8 +28,20 @@ export class PatientsListComponent implements OnInit {
       }})
   }
   openAttendedCardiologyForm(patient: Patient){
-    this.router.navigate(["/attended-cardiology-form"],{queryParams: {
+    let page = "";
+    if(this.selectedTab == 'queue'){
+      page = "/cardiology-form";
+    }
+    else if(this.selectedTab == 'attended'){
+      page = "/attended-cardiology-form";
+    }
+    this.router.navigate([page],{queryParams: {
       id: patient.id
     }})
+}
+
+selectTab(selectedTab){
+  this.selectedTab = selectedTab;
+  this.patients = this.patientsService.getPatientsMocked(this.selectedTab);
 }
 }

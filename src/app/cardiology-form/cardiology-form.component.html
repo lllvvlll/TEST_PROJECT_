@@ -8,7 +8,7 @@
         <div id="personalInformation">
             <!-- <h2 class="sub_title m-0 pt-0">Personal Information</h2>  -->
             <!-- <h2 class="sub_title bb-1 pt-0">Personal Information</h2> -->
-            <div class="alert alert-success" *ngIf="success">
+            <div class="alert alert-success" *ngIf="false">
                 <strong>Settings saved!</strong>
             </div>
             <form name="editForm" role="form">
@@ -672,6 +672,48 @@
                                 </div>
                             </form>
                     
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="section-title">Pergnant?</label>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pergnantRadio"
+                                id="pergnantRadioYes" value="option1" checked>
+                            <label class="form-check-label" for="pergnantRadioYes">
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pergnantRadio"
+                                id="pergnantRadioNo" value="option1" checked>
+                            <label class="form-check-label" for="pergnantRadioNo">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                <!-- </div>
+                <div class="row mt-2"> -->
+                    <div class="col-sm-3">
+                        <!-- <div class="form-control blood-glucose"> -->
+                            <label class="form-control-label" for="bloodGlucose">Blood Glucose Level
+                                <!-- <span class='required'>*</span> -->
+                            </label>
+                           
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="bloodGlucose" id="bloodGlucose"
+                        required maxlength="100" />
+                        
+                    </div>
+                    <div class="col-sm-1 text-left pt-2 pl-0">
+                        <span>/min</span>
+                    </div>
                 </div>
                 <hr />
                 <div class="row">
