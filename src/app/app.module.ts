@@ -10,6 +10,7 @@ import { CardiologyFormComponent } from './cardiology-form/cardiology-form.compo
 import { AttendedCardiologyComponent } from './attended-cardiology/attended-cardiology.component';
 import { AttendedFallRiskAssesmentComponent } from './attended-cardiology/attended-fall-risk-assesment/attended-fall-risk-assesment.component';
 import { FormPatientComponent } from './components/form-patient/form-patient.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { FormPatientComponent } from './components/form-patient/form-patient.com
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

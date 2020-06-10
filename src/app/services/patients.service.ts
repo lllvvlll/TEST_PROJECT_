@@ -9,6 +9,81 @@ export class PatientsService {
 
   constructor() { }
 
+  getPainAssessments(){
+    return [
+      {
+        image: "assets/nursing_assessment/selected_pain_img_0_u488.svg",
+        score:0,
+        label:"No Pain",
+        requiredAction:" "
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_1_u475.svg",
+        score:1,
+        label:"Mild Pain",
+        requiredAction:" "
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_3_u476.svg",
+        score:2,
+        label:"Mild Pain",
+        requiredAction:" "
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_2_u477.svg",
+        score:3,
+        label:"Mild Pain",
+        requiredAction:" "
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_4_u479.svg",
+        score:4,
+        label:"Moderate Pain",
+        requiredAction:"Intervention Required"
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_6_u478.svg",
+        score:5,
+        label:"Moderate Pain",
+        requiredAction:"Intervention Required"
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_5_u480.svg",
+        score:6,
+        label:"Moderate Pain",
+        requiredAction:"Intervention Required"
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_7_u481.svg",
+        score:7,
+        label:"Severe Pain",
+        labelColor:"#f00",
+        requiredAction:"Intervention Required"
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_8_u483.svg",
+        score:8,
+        label:"Severe Pain",
+        labelColor:"#f00",
+        requiredAction:"Intervention Required"
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_9_u482.svg",
+        score:9,
+        label:"Severe Pain",
+        labelColor:"#f00",
+        requiredAction:"Intervention Required"
+      },
+      {
+        image: "assets/nursing_assessment/pain_score_img_9_u482.svg",
+        score:10,
+        label:"Very Severe Pain",
+        labelColor:"#f00",
+        requiredAction:"Intervention Required"
+      },
+   
+    ];
+  }
   getPatientsMocked(tab) : Patient[] {
     let res: Patient[];
     if(tab == 'queue'){
@@ -18,7 +93,7 @@ export class PatientsService {
         name:"Jennifer Dezousa Labadia",
         age:"26Y 12M 6D",
         birthDate:"19-02-1993",
-        gender:"Female ",
+        gender:"Female",
         mrn:"247766 ",
         pvrNo:"6565632 ",
         doctor:" Moammed Houcem Ameour [Cardiology]",
@@ -29,7 +104,7 @@ export class PatientsService {
         name:"Fatimah Abdul Azeez",
         age:"09Y 02M 6D",
         birthDate:"25-02-2011",
-        gender:"Female ",
+        gender:"Female",
         mrn:"356563",
         pvrNo:"6565633 ",
         doctor:" Moammed Houcem Ameour [Cardiology]",
@@ -40,7 +115,7 @@ export class PatientsService {
         name:"Jennifer Dezousa Labadia",
         age:"26Y 12M 6D",
         birthDate:"19-02-1993",
-        gender:"Female ",
+        gender:"Female",
         mrn:"247766 ",
         pvrNo:"6565632 ",
         doctor:" Moammed Houcem Ameour [Cardiology]",
@@ -51,7 +126,7 @@ export class PatientsService {
         name:"Jennifer Dezousa Labadia",
         age:"26Y 12M 6D",
         birthDate:"19-02-1993",
-        gender:"Female ",
+        gender:"Female",
         mrn:"247766 ",
         pvrNo:"6565632 ",
         doctor:" Moammed Houcem Ameour [Cardiology]",
@@ -62,7 +137,7 @@ export class PatientsService {
         name:"Jennifer Dezousa Labadia",
         age:"26Y 12M 6D",
         birthDate:"19-02-1993",
-        gender:"Female ",
+        gender:"Female",
         mrn:"247766 ",
         pvrNo:"6565632 ",
         doctor:" Moammed Houcem Ameour [Cardiology]",

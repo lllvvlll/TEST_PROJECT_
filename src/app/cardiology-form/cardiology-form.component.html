@@ -20,7 +20,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body small-fields">
                                 <app-form-patient [patient]="patient"></app-form-patient>
-                                <hr/>
+                                <hr />
                                 <div class="row" style="margin-top: 100px;">
                                     <div class="col-md-2">
                                         <div class="form-group">
@@ -95,8 +95,8 @@
                                                 <label class="form-control-label" for="o2sat">O2SAT
                                                     <!-- <span class='required'>*</span> -->
                                                 </label>
-                                                <input type="text" class="form-control" name="o2sat"
-                                                    id="o2sat" maxlength="100" />
+                                                <input type="text" class="form-control" name="o2sat" id="o2sat"
+                                                    maxlength="100" />
                                                 <span>%</span>
                                                 <div>
 
@@ -110,8 +110,8 @@
 
                                                 <label class="form-control-label" for="ag">A.G
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="ag"
-                                                    id="ag" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="ag" id="ag"
+                                                    maxlength="100" />
                                                 <span>cm</span>
                                                 <div>
 
@@ -154,8 +154,8 @@
 
                                                 <label class="form-control-label" for="bma">BMA
                                                     <!-- <span class='required'>*</span> -->
-                                                </label> <input type="text" class="form-control" name="bma"
-                                                    id="bma" maxlength="100" />
+                                                </label> <input type="text" class="form-control" name="bma" id="bma"
+                                                    maxlength="100" />
                                                 <span>kg/m2</span>
                                                 <div>
 
@@ -187,6 +187,21 @@
                                 <!-- </div> -->
                                 <!--  end row -->
                             </div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-sm-3 align-self-center">
+                                    <label class="form-control-label" for="bloodGlucose">Blood Glucose Level
+                                    </label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="bloodGlucose"
+                                        id="bloodGlucose" required maxlength="100" />
+
+                                </div>
+                                <div class="col-sm-1 text-left pt-2 pl-0">
+                                    <span>/min</span>
+                                </div>
+                            </div>
                         </div>
                         <!-- </section> -->
 
@@ -199,11 +214,11 @@
                             <!-- <div class="input-group-prepend">
                               <span class="input-group-text">With textarea</span>
                             </div> -->
-                            <label class="form-control-label section-title" for="chief-comp">Chief Complaints & History of Present
+                            <label class="form-control-label section-title" for="chief-comp">Chief Complaints & History
+                                of Present
                                 Illnessd</label>
-                            <textarea class="form-control" aria-label="With textarea"
-                            id="chief-comp"
-                            style="height:200px"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" id="chief-comp"
+                                style="height:200px"></textarea>
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -389,9 +404,10 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Allergies" aria-label="Amount (to the nearest dollar)">
+                                    <input type="text" class="form-control" placeholder="Allergies"
+                                        aria-label="Amount (to the nearest dollar)">
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><img src="../assets/search.png" /></span>
+                                        <span class="input-group-text"><img src="assets/search.png" /></span>
                                     </div>
                                 </div>
                             </div>
@@ -455,15 +471,15 @@
                             <div class="col-sm-3">
                                 <label>Pain Score:</label>
                             </div>
-                            <div class="col-sm-1 pl-0">
+                            <div class="col-sm-1 pl-0" *ngIf="selectedAssessment">
                                 <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
-                                <p class="pl-2"><span>0</span></p>
+                                    [src]="selectedAssessment.image" />
+                                <p class="pl-2"><span>{{selectedAssessment.score}}</span></p>
                             </div>
 
-                            <div class="col-sm-4">
-                                <p>Moderate pain</p>
-                                <p style="color: red;">Intervention Required</p>
+                            <div class="col-sm-4" *ngIf="selectedAssessment">
+                                <p class="mb-0" [ngStyle] = "{'color': selectedAssessment.labelColor}">{{selectedAssessment.label}}</p>
+                                <p style="color: #d6171c; font-weight: bold;">{{selectedAssessment.requiredAction}}</p>
                             </div>
 
 
@@ -477,61 +493,12 @@
                         <div class="row">
                             <!-- <div class="col-sm-6">
                                 <div class="row"> -->
-                            <div class="col-sm-1">
+                            <div class="col-sm-1" *ngFor="let assessment of painAssessments" (click)="selectedAssessment = assessment">
                                 <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
-                                <p class="pl-2"><span>0</span></p>
+                                    [src]="assessment.image" />
+                                <p class="pl-2"><span>{{assessment.score}}</span></p>
                             </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_1_u475.svg" />
-                                <p class="pl-2"><span>1</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_3_u476.svg" />
-                                <p class="pl-2"><span>2</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_2_u477.svg" />
-                                <p class="pl-2"><span>3</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_4_u479.svg" />
-                                <p class="pl-2"><span>4</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_6_u478.svg" />
-                                <p class="pl-2"><span>5</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_5_u480.svg" />
-                                <p class="pl-2"><span>6</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_7_u481.svg" />
-                                <p class="pl-2"><span>7</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_8_u483.svg" />
-                                <p class="pl-2"><span>8</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_9_u482.svg" />
-                                <p class="pl-2"><span>9</span></p>
-                            </div>
-                            <div class="col-sm-1">
-                                <img id="u488_img" class="img"
-                                    src="../assets/nursing_assessment/pain_score_img_9_u482.svg" />
-                                <p class="pl-2"><span>10</span></p>
-                            </div>
+
                             <div class="col-sm-4">
                                 <select class="custom-select">
                                     <option class="u485_input_option" selected="" value="Pain Scale">Pain Scale</option>
@@ -556,134 +523,148 @@
                 </div>
                 <hr />
                 <div class="row">
-                            <form class="p-3 mb-5 bg-white">
-                                <div class="row mb-2">
-                                    <div class="col-3 my-auto">
-                                         <label class="section-title">Fall Risk Assessment</label>       
-                                    </div>
-                                    <div class="col-4 my-auto">
-                                        [Modified Morse Fall Scale]
-                                    </div>
-                                    <div class="col-5">
-                                        Fall Risk Score: 75 <span style="color:red;">At Risk of Fall</span>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-4 my-auto">
-                                        Patient with special needs:
-                                    </div>
-                                    <div class="col-2">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Yes[25]</option>
-                                            <option>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3 my-auto">
-                                        Ambulatory aid:
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Bed rest/Nurse assist [0]</option>
-                                            <option>Crutches/Cane/Walker [15]</option>
-                                            <option>Furniture for support [30]</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-4 my-auto">
-                                        History of falling; immediate / within 3 months:
-                                    </div>
-                                    <div class="col-2">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Yes[25]</option>
-                                            <option>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3 my-auto">
-                                        IV/Heparin Lock:
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Yes[25]</option>
-                                            <option>No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-4 my-auto">
-                                        Secondary diagnosis & post-operative immobilization:
-                                    </div>
-                                    <div class="col-2">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Yes[25]</option>
-                                            <option>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3 my-auto">
-                                        Gait/transfering:
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Normal/Bed rest/Immobile [0]</option>
-                                            <option>Weak [10]</option>
-                                            <option>Impaired [20]</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 my-auto">
-                                        Medication affecting balance/concentration:
-                                    </div>
-                                    <div class="col-2">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Yes[25]</option>
-                                            <option>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3 my-auto">
-                                        Mental Status:
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-control">
-                                            <option selected>Select</option>
-                                            <option>Oriented to own ability [0]</option>
-                                            <option>Weak [10]</option>
-                                            <option>Impaired [20]</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4 my-auto">
-                                    </div>
-                                    <div class="col-2">
-                                    </div>
-                                    <div class="col-3 my-auto">
-                                    </div>
-                                    <!-- <div class="col-3">
+                    <form class="p-3 mb-5 bg-white">
+                        <div class="row mb-2">
+                            <div class="col-3 my-auto">
+                                <label class="section-title">Fall Risk Assessment</label>
+                            </div>
+                            <div class="col-4 my-auto">
+                                [Modified Morse Fall Scale]
+                            </div>
+                            <div class="col-5">
+                                Fall Risk Score: <span > {{fallRiskTotal}}</span>&nbsp; <span *ngIf="fallRiskTotal" style="color:red;">At Risk of Fall</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 my-auto">
+                                Patient with special needs:
+                            </div>
+                            <div class="col-2">
+                                <select class="form-control"
+                                [ngModelOptions]="{standalone: true}"
+                                 (change)="handleNgModelChange()"
+                                 [(ngModel)]="fallRiskAssessment.specialNeeds" >
+                                    <option selected>Select</option>
+                                    <option value="25">Yes[25]</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="col-3 my-auto">
+                                Ambulatory aid:
+                            </div>
+                            <div class="col-3">
+                                <select class="form-control">
+                                    <option selected>Select</option>
+                                    <option>Bed rest/Nurse assist [0]</option>
+                                    <option>Crutches/Cane/Walker [15]</option>
+                                    <option>Furniture for support [30]</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 my-auto">
+                                History of falling; immediate / within 3 months:
+                            </div>
+                            <div class="col-2">
+                                <select class="form-control" 
+                                [ngModelOptions]="{standalone: true}"
+                                (change)="handleNgModelChange()" [(ngModel)]="fallRiskAssessment.history">
+                                    <option selected>Select</option>
+                                    <option value="15">Yes[15]</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="col-3 my-auto">
+                                IV/Heparin Lock:
+                            </div>
+                            <div class="col-3">
+                                <select class="form-control" 
+                                [ngModelOptions]="{standalone: true}"
+                                (change)="handleNgModelChange()"
+                                 [(ngModel)]="fallRiskAssessment.heprin">
+                                    <option selected>Select</option>
+                                    <option value="20">Yes[20]</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 my-auto">
+                                Secondary diagnosis & post-operative immobilization:
+                            </div>
+                            <div class="col-2">
+                                <select class="form-control" 
+                                [ngModelOptions]="{standalone: true}"
+                                (change)="handleNgModelChange()" 
+                                [(ngModel)]="fallRiskAssessment.secondaryDiagnosis">
+                                    <option selected>Select</option>
+                                    <option value="15">Yes[15]</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="col-3 my-auto">
+                                Gait/transfering:
+                            </div>
+                            <div class="col-3">
+                                <select class="form-control">
+                                    <option selected>Select</option>
+                                    <option>Normal/Bed rest/Immobile [0]</option>
+                                    <option>Weak [10]</option>
+                                    <option>Impaired [20]</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 my-auto">
+                                Medication affecting balance/concentration:
+                            </div>
+                            <div class="col-2">
+                                <select class="form-control"
+                                [ngModelOptions]="{standalone: true}"
+                                 (change)="handleNgModelChange()" 
+                                [(ngModel)]="fallRiskAssessment.medicationAffect">
+                                    <option selected>Select</option>
+                                    <option value="15">Yes[15]</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="col-3 my-auto">
+                                Mental Status:
+                            </div>
+                            <div class="col-3">
+                                <select class="form-control">
+                                    <option selected>Select</option>
+                                    <option>Oriented to own ability [0]</option>
+                                    <option>Weak [10]</option>
+                                    <option>Impaired [20]</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 my-auto">
+                            </div>
+                            <div class="col-2">
+                            </div>
+                            <div class="col-3 my-auto">
+                            </div>
+                            <!-- <div class="col-3">
                                         <button type="button" class="btn btn-primary">Save</button>
                                         &nbsp;
                                         <button type="button" class="btn btn-primary">Clear</button>
                                     </div> -->
-                                </div>
-                            </form>
-                    
+                        </div>
+                    </form>
+
                 </div>
                 <hr />
-                <div class="row">
+                <div class="row" *ngIf="patient.gender == 'Female'">
                     <div class="col-sm-2">
                         <label class="section-title">Pergnant?</label>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pergnantRadio"
-                                id="pergnantRadioYes" value="option1" checked>
+                            <input class="form-check-input" type="radio" name="pergnantRadio" id="pergnantRadioYes"
+                                value="option1" checked>
                             <label class="form-check-label" for="pergnantRadioYes">
                                 Yes
                             </label>
@@ -691,33 +672,20 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pergnantRadio"
-                                id="pergnantRadioNo" value="option1" checked>
+                            <input class="form-check-input" type="radio" name="pergnantRadio" id="pergnantRadioNo"
+                                value="option1" checked>
                             <label class="form-check-label" for="pergnantRadioNo">
                                 No
                             </label>
                         </div>
                     </div>
-                <!-- </div>
+                    <!-- </div>
                 <div class="row mt-2"> -->
-                    <div class="col-sm-3">
-                        <!-- <div class="form-control blood-glucose"> -->
-                            <label class="form-control-label" for="bloodGlucose">Blood Glucose Level
-                                <!-- <span class='required'>*</span> -->
-                            </label>
-                           
-                        <!-- </div> -->
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control" name="bloodGlucose" id="bloodGlucose"
-                        required maxlength="100" />
-                        
-                    </div>
-                    <div class="col-sm-1 text-left pt-2 pl-0">
-                        <span>/min</span>
-                    </div>
+                  
+               
+               
                 </div>
-                <hr />
+                <hr *ngIf="patient.gender == 'Female'" />
                 <div class="row">
                     <div class="col-sm-12 chief-comp">
                         <div class="form-group">
@@ -725,16 +693,17 @@
               <span class="input-group-text">With textarea</span>
             </div> -->
                             <label class="form-control-label section-title" for="nurses-notes">Nurses Notes</label>
-                            <textarea class="form-control" aria-label="With textarea" id="nurses-notes" style="height:200px"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" id="nurses-notes"
+                                style="height:200px"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="row mb-5">
-                         <div class="col-sm-3 offset-sm-9">
-                                        <button type="button" class="btn btn-primary">Save</button>
-                                        &nbsp;
-                                        <button type="button" class="btn btn-primary">Clear</button>
-                            </div>
+                    <div class="col-sm-3 offset-sm-9">
+                        <button type="button" class="btn btn-primary">Save</button>
+                        &nbsp;
+                        <button type="button" class="btn btn-primary">Clear</button>
+                    </div>
                 </div>
 
             </form>
