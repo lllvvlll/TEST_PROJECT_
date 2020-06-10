@@ -1,4 +1,5 @@
-<div class="panel panel-default">
+<app-form-patient [patient]="patient"></app-form-patient>
+<div class="panel panel-default" style="margin-left: 30px; margin-top:115px;">
     <div class="panel-body">
         <div class="row" style="margin-right: 0px !important;">
             <div class="col-md-5 rounded shadow bg-white mb-2 mt-2 pt-2">
@@ -129,13 +130,34 @@
                     </div>
                     <div class="col-md-3">
                         <div class="row pb-3">
-                            25 (14:10) 0 (13:15)
+                            <u style="cursor: pointer;" (click)="openFallRisk(fallRiskAssessment2)"> 25
+                                (14:10)</u>&nbsp;&nbsp;<u> 0 (13:15)</u>
                         </div>
                         <div class="row pb-3">
-                            4 (14:10) 0 (13:15)
+                            <ng-template #tipContent >
+                                <div class="row mr-0 ml-0">
+                                    <div class="col-sm-4 pt-2">
+                                        <img class="img"
+                                            src="assets/nursing_assessment/pain_score_img_4_u479.svg" />
+                                            <p class="pl-2 mb-0"><span>4</span></p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="mb-0">Moderate Pain</p>
+                                        <p class="mb-0" style="color: #d6171c; font-weight: bold;">Intervention Required</p>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <u [ngbTooltip]="tipContent">4 (14:10)</u>&nbsp;&nbsp;<u>0 (13:15)</u>
                         </div>
                         <div class="row">
 
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row pb-3">
+                            <span class="custom-link" (click)="openDiagnosesAndOrders(diagnosesAndOrders)">
+                                Diagnosis & Orders
+                            </span>
                         </div>
                     </div>
 
@@ -270,7 +292,56 @@
         </div>
         <div class="row mb-3" style="margin-right: 0px !important;">
             <div class="col-10 rounded shadow bg-white p-4">
-                
+                <h2>Nurses Notes</h2>
+                <!-- <div class="form-group">
+                    <label class="form-control-label section-title" for="nurses-notes">Nurses Notes</label>
+                    <textarea class="form-control" aria-label="With textarea" id="nurses-notes"
+                        style="height:200px"></textarea>
+                </div> -->
+                <div class="row border-bottom border-top">
+                    <div class="col-sm-2 border-right">
+                        User 123 14:10
+                    </div>
+                    <div class="col-sm-10 ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                        gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam
+                        fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc
+                        eget odio. Lorem ipsum dolor sit amet,
+                    </div>
+
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-sm-2 border-right">
+                        User 123 14:10
+                    </div>
+                    <div class="col-sm-10 ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                        gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam
+                        fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc
+                        eget odio. Lorem ipsum dolor sit amet,
+                    </div>
+
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-sm-2 border-right">
+                        User 123 14:10
+                    </div>
+                    <div class="col-sm-10 ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                        gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam
+                        fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc
+                        eget odio. Lorem ipsum dolor sit amet,
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-4 offset-sm-4 text-center">
+                        <button class="btn btn-primary" (click)="openNurseNotes(nurseNotes)">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -284,16 +355,17 @@
         </button>
     </div>
     <div class="modal-body">
-        <form class="shadow p-3 mb-5 bg-white rounded">
+        <form class="p-3 mb-5 bg-white">
             <div class="row mb-2">
                 <div class="col-3 my-auto">
-
+                    <label class="section-title">Fall Risk Assessment</label>
                 </div>
                 <div class="col-4 my-auto">
                     [Modified Morse Fall Scale]
                 </div>
                 <div class="col-5">
-                    Fall Risk Score: 75 <span style="color:red;">At Risk of Fall</span>
+                    Fall Risk Score: <span> {{fallRiskTotal}}</span>&nbsp; <span *ngIf="fallRiskTotal"
+                        style="color:red;">At Risk of Fall</span>
                 </div>
             </div>
             <div class="row mb-3">
@@ -301,10 +373,11 @@
                     Patient with special needs:
                 </div>
                 <div class="col-2">
-                    <select class="form-control">
-                        <option selected>Select</option>
-                        <option>Yes[25]</option>
-                        <option>No</option>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.specialNeeds">
+                        <option value="0" selected>Select</option>
+                        <option value="25">Yes[25]</option>
+                        <option value="0">No</option>
                     </select>
                 </div>
                 <div class="col-3 my-auto">
@@ -324,20 +397,22 @@
                     History of falling; immediate / within 3 months:
                 </div>
                 <div class="col-2">
-                    <select class="form-control">
-                        <option selected>Select</option>
-                        <option>Yes[25]</option>
-                        <option>No</option>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.history">
+                        <option value="0" selected>Select</option>
+                        <option value="15">Yes[15]</option>
+                        <option value="0">No</option>
                     </select>
                 </div>
                 <div class="col-3 my-auto">
                     IV/Heparin Lock:
                 </div>
                 <div class="col-3">
-                    <select class="form-control">
-                        <option selected>Select</option>
-                        <option>Yes[25]</option>
-                        <option>No</option>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.heprin">
+                        <option value="0" selected>Select</option>
+                        <option value="20">Yes[20]</option>
+                        <option value="0">No</option>
                     </select>
                 </div>
             </div>
@@ -346,10 +421,11 @@
                     Secondary diagnosis & post-operative immobilization:
                 </div>
                 <div class="col-2">
-                    <select class="form-control">
-                        <option selected>Select</option>
-                        <option>Yes[25]</option>
-                        <option>No</option>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.secondaryDiagnosis">
+                        <option value="0" selected>Select</option>
+                        <option value="15">Yes[15]</option>
+                        <option value="0">No</option>
                     </select>
                 </div>
                 <div class="col-3 my-auto">
@@ -369,10 +445,11 @@
                     Medication affecting balance/concentration:
                 </div>
                 <div class="col-2">
-                    <select class="form-control">
-                        <option selected>Select</option>
-                        <option>Yes[25]</option>
-                        <option>No</option>
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.medicationAffect">
+                        <option value="0" selected>Select</option>
+                        <option value="15">Yes[15]</option>
+                        <option value="0">No</option>
                     </select>
                 </div>
                 <div class="col-3 my-auto">
@@ -394,100 +471,149 @@
                 </div>
                 <div class="col-3 my-auto">
                 </div>
-                <div class="col-3">
-                    <button type="button" class="btn btn-primary">Save</button>
-                    &nbsp;
-                    <button type="button" class="btn btn-primary">Clear</button>
-                </div>
+                <!-- <div class="col-3">
+                            <button type="button" class="btn btn-primary">Save</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-primary">Clear</button>
+                        </div> -->
             </div>
         </form>
-        <form class="shadow p-3 mb-5 bg-white rounded">
-            <div class="row">
-                <h2>Final Diagnosis</h2>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
+<ng-template #fallRiskAssessment2 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Fall Risk Assessment</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="p-3 mb-5 bg-white">
+            <div class="row mb-2">
+                <div class="col-3 my-auto">
+                    <label class="section-title">Fall Risk Assessment</label>
+                </div>
+                <div class="col-4 my-auto">
+                    [Modified Morse Fall Scale]
+                </div>
+                <div class="col-5">
+                    Fall Risk Score: <span> 25</span>&nbsp; <span style="color:red;">At Risk of
+                        Fall</span>
+                </div>
             </div>
-            <table class="table table-bordered  modal-table">
-                <thead>
-                    <tr>
-                        <th>ICD Code</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>J00</td>
-                        <td>Acute nasopharyngitis [common cold]</td>
-                    </tr>
-                    <tr>
-                        <td>R51</td>
-                        <td>Headache</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row">
-                <h4>Provisional Diagnosis</h4>
+            <div class="row mb-3">
+                <div class="col-4 my-auto">
+                    Patient with special needs:
+                </div>
+                <div class="col-2">
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.specialNeeds">
+                        <option value="0" selected>Select</option>
+                        <option value="25">Yes[25]</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-3 my-auto">
+                    Ambulatory aid:
+                </div>
+                <div class="col-3">
+                    <select class="form-control">
+                        <option>Select</option>
+                        <option selected>Bed rest/Nurse assist [0]</option>
+                        <option>Crutches/Cane/Walker [15]</option>
+                        <option>Furniture for support [30]</option>
+                    </select>
+                </div>
             </div>
-            <table class="table table-bordered  modal-table">
-                <thead>
-                    <tr>
-                        <th>ICD Code</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>J01.00</td>
-                        <td>Acute maxillary sinusitis, unspecified</td>
-                    </tr>
-                    <tr>
-                        <td>I10</td>
-                        <td>Essential (primary) hypertension</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row">
-                <h4>Medical Services</h4>
+            <div class="row mb-3">
+                <div class="col-4 my-auto">
+                    History of falling; immediate / within 3 months:
+                </div>
+                <div class="col-2">
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.history">
+                        <option value="0" selected>Select</option>
+                        <option value="15">Yes[15]</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-3 my-auto">
+                    IV/Heparin Lock:
+                </div>
+                <div class="col-3">
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.heprin">
+                        <option value="0" selected>Select</option>
+                        <option value="20">Yes[20]</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
             </div>
-            <table class="table table-bordered  modal-table">
-                <thead>
-                    <tr>
-                        <th>CPT Code</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>85027</td>
-                        <td>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</td>
-                    </tr>
-                    <tr>
-                        <td>87086</td>
-                        <td>Culture, bacterial; quantitative colony count, urine</td>
-                    </tr>
-                    <tr>
-                        <td>71010</td>
-                        <td>Radiologic examination, chest; single view, frontal</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row">
-                <h4>Medical Prescription</h4>
+            <div class="row mb-3">
+                <div class="col-4 my-auto">
+                    Secondary diagnosis & post-operative immobilization:
+                </div>
+                <div class="col-2">
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.secondaryDiagnosis">
+                        <option value="0">Select</option>
+                        <option value="15">Yes[15]</option>
+                        <option value="0" selected>No</option>
+                    </select>
+                </div>
+                <div class="col-3 my-auto">
+                    Gait/transfering:
+                </div>
+                <div class="col-3">
+                    <select class="form-control">
+                        <option>Select</option>
+                        <option>Normal/Bed rest/Immobile [0]</option>
+                        <option selected>Weak [10]</option>
+                        <option>Impaired [20]</option>
+                    </select>
+                </div>
             </div>
-            <table class="table table-bordered  modal-table">
-                <thead>
-                    <tr>
-                        <th>Generic Name</th>
-                        <th>Brand Name</th>
-                        <th>Route</th>
-                        <th>Instructions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>PARACETAMOL 120MG/5ML SUSP</td>
-                    <td>ADOL 120MG SUSPN</td>
-                    <td>Oral</td>
-                    <td>Take 100ml , 2 Times(s) Per Day For 5 Days(s)</td>
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-4 my-auto">
+                    Medication affecting balance/concentration:
+                </div>
+                <div class="col-2">
+                    <select class="form-control" [ngModelOptions]="{standalone: true}" (change)="handleNgModelChange()"
+                        [(ngModel)]="fallRiskAssessment.medicationAffect">
+                        <option value="0" selected>Select</option>
+                        <option value="15">Yes[15]</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-3 my-auto">
+                    Mental Status:
+                </div>
+                <div class="col-3">
+                    <select class="form-control">
+                        <option>Select</option>
+                        <option selected>Oriented to own ability [0]</option>
+                        <option>Weak [10]</option>
+                        <option>Impaired [20]</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 my-auto">
+                </div>
+                <div class="col-2">
+                </div>
+                <div class="col-3 my-auto">
+                </div>
+                <!-- <div class="col-3">
+                            <button type="button" class="btn btn-primary">Save</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-primary">Clear</button>
+                        </div> -->
+            </div>
         </form>
 
     </div>
@@ -511,62 +637,35 @@
                 <div class="col-sm-3">
                     <label>Pain Score:</label>
                 </div>
-                <div class="col-sm-1 pl-0">
-                    <img id="u488_img" class="img" src="../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
-                    <p class="pl-2"><span>0</span></p>
+                <div class="col-sm-1 pl-0" *ngIf="selectedAssessment">
+                    <img id="u488_img" class="img" [src]="selectedAssessment.image" />
+                    <p class="pl-2"><span>{{selectedAssessment.score}}</span></p>
                 </div>
 
-                <div class="col-sm-4">
-                    <p>Moderate pain</p>
-                    <p style="color: red;">Intervention Required</p>
+                <div class="col-sm-4" *ngIf="selectedAssessment">
+                    <p class="mb-0" [ngStyle]="{'color': selectedAssessment.labelColor}">{{selectedAssessment.label}}
+                    </p>
+                    <p style="color: #d6171c; font-weight: bold;">{{selectedAssessment.requiredAction}}</p>
                 </div>
+
+
             </div>
+            <!-- <div class="row">
+                <div class="col-sm-2 pl-3">
+                    <span>Moderation pain</span>    
+                    <span>Intervention Required</span>    
+              </div>
+            </div> -->
             <div class="row">
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/selected_pain_img_0_u488.svg" />
-                    <p class="pl-2"><span>0</span></p>
+                <!-- <div class="col-sm-6">
+                    <div class="row"> -->
+                <div class="col-sm-1" *ngFor="let assessment of painAssessments"
+                    (click)="selectedAssessment = assessment">
+                    <img id="u488_img" class="img" [src]="assessment.image" />
+                    <p class="pl-2"><span>{{assessment.score}}</span></p>
                 </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_1_u475.svg" />
-                    <p class="pl-2"><span>1</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_3_u476.svg" />
-                    <p class="pl-2"><span>2</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_2_u477.svg" />
-                    <p class="pl-2"><span>3</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_4_u479.svg" />
-                    <p class="pl-2"><span>4</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_6_u478.svg" />
-                    <p class="pl-2"><span>5</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_5_u480.svg" />
-                    <p class="pl-2"><span>6</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_7_u481.svg" />
-                    <p class="pl-2"><span>7</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_8_u483.svg" />
-                    <p class="pl-2"><span>8</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_9_u482.svg" />
-                    <p class="pl-2"><span>9</span></p>
-                </div>
-                <div class="col-sm-1">
-                    <img id="u488_img" class="img" src="../../assets/nursing_assessment/pain_score_img_9_u482.svg" />
-                    <p class="pl-2"><span>10</span></p>
-                </div>
-                <div class="col-sm-4">
+
+                <!-- <div class="col-sm-4">
                     <select class="custom-select">
                         <option class="u485_input_option" selected="" value="Pain Scale">Pain Scale</option>
                         <option class="u485_input_option" value="0">0</option>
@@ -581,8 +680,11 @@
                         <option class="u485_input_option" value="9">9</option>
                         <option class="u485_input_option" value="10">10</option>
                     </select>
-                </div>
+                </div> -->
+
+
             </div>
+
         </form>
 
 
@@ -796,6 +898,130 @@
             </div>
 
         </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<ng-template #nurseNotes let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Nurse Notes</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="form-control-label section-title" for="nurses-notes">Nurses Notes</label>
+            <textarea class="form-control" aria-label="With textarea" id="nurses-notes" style="height:200px"></textarea>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<ng-template #diagnosesAndOrders let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Diagnosis & Orders</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="shadow p-3 mb-5 bg-white rounded">
+            <div class="row">
+                <h2>Final Diagnosis</h2>
+            </div>
+            <table class="table table-bordered  modal-table">
+                <thead>
+                    <tr>
+                        <th>ICD Code</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>J00</td>
+                        <td>Acute nasopharyngitis [common cold]</td>
+                    </tr>
+                    <tr>
+                        <td>R51</td>
+                        <td>Headache</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <h4>Provisional Diagnosis</h4>
+            </div>
+            <table class="table table-bordered  modal-table">
+                <thead>
+                    <tr>
+                        <th>ICD Code</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>J01.00</td>
+                        <td>Acute maxillary sinusitis, unspecified</td>
+                    </tr>
+                    <tr>
+                        <td>I10</td>
+                        <td>Essential (primary) hypertension</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <h4>Medical Services</h4>
+            </div>
+            <table class="table table-bordered  modal-table">
+                <thead>
+                    <tr>
+                        <th>CPT Code</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>85027</td>
+                        <td>Blood count; complete (CBC), automated (Hgb, Hct, RBC, WBC and platelet count)</td>
+                    </tr>
+                    <tr>
+                        <td>87086</td>
+                        <td>Culture, bacterial; quantitative colony count, urine</td>
+                    </tr>
+                    <tr>
+                        <td>71010</td>
+                        <td>Radiologic examination, chest; single view, frontal</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <h4>Medical Prescription</h4>
+            </div>
+            <table class="table table-bordered  modal-table">
+                <thead>
+                    <tr>
+                        <th>Generic Name</th>
+                        <th>Brand Name</th>
+                        <th>Route</th>
+                        <th>Instructions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>PARACETAMOL 120MG/5ML SUSP</td>
+                    <td>ADOL 120MG SUSPN</td>
+                    <td>Oral</td>
+                    <td>Take 100ml , 2 Times(s) Per Day For 5 Days(s)</td>
+                </tbody>
+            </table>
+        </form>
 
 
     </div>

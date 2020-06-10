@@ -3,7 +3,8 @@
 </div> -->
 
 <div class="right-contentArea">
-    <div class="jh-card">
+    <app-form-patient [patient]="patient"></app-form-patient>
+    <div class="jh-card" style="margin-left: 30px;">
         <!--  <h1 class="pagetitle">Add Patient</h1>  -->
         <div id="personalInformation">
             <!-- <h2 class="sub_title m-0 pt-0">Personal Information</h2>  -->
@@ -12,6 +13,7 @@
                 <strong>Settings saved!</strong>
             </div>
             <form name="editForm" role="form">
+               
                 <!--  into H@ jhiTranslate="ppmsApp.accumedPatient.home.createOrEditLabel" -->
                 <div class="row ">
                     <div class="col-md-12">
@@ -19,7 +21,7 @@
                         <!-- <h2 class="anchorSubTitle">Patient Details</h2> -->
                         <div class="panel panel-default">
                             <div class="panel-body small-fields">
-                                <app-form-patient [patient]="patient"></app-form-patient>
+                                
                                 <hr />
                                 <div class="row" style="margin-top: 100px;">
                                     <div class="col-md-2">
@@ -499,7 +501,7 @@
                                 <p class="pl-2"><span>{{assessment.score}}</span></p>
                             </div>
 
-                            <div class="col-sm-4">
+                            <!-- <div class="col-sm-4">
                                 <select class="custom-select">
                                     <option class="u485_input_option" selected="" value="Pain Scale">Pain Scale</option>
                                     <option class="u485_input_option" value="0">0</option>
@@ -515,7 +517,7 @@
                                     <option class="u485_input_option" value="10">10</option>
                                 </select>
 
-                            </div>
+                            </div> -->
 
 
                         </div>
