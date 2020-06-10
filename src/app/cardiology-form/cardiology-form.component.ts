@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Patient } from 'src/models/patient';
 import { PatientsService } from '../services/patients.service';
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cardiology-form',
@@ -31,7 +32,7 @@ export class CardiologyFormComponent implements OnInit {
 
   fallRiskTotal;
 
-  constructor(private activatedRouter:ActivatedRoute, private patientService: PatientsService) { 
+  constructor(private activatedRouter:ActivatedRoute, private patientService: PatientsService,private modalService: NgbModal) { 
      this.activatedRouter.queryParams.subscribe(res => {
         console.log("res",res.id);
         this.patient = this.patientService.getPatientsMocked('queue').find(item => item.id == res.id);
@@ -47,6 +48,14 @@ export class CardiologyFormComponent implements OnInit {
     this.fallRiskTotal = Object.values(this.fallRiskAssessment).reduce((a,b) => parseInt(a.toString()) + parseInt(b.toString()) );
   }
   ngOnInit() {
+  }
+
+  openHomeMedications(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'xl', scrollable: true }).result.then((result) => {
+      // this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
 }
