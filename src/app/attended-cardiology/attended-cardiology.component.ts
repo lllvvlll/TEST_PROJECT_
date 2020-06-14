@@ -14,7 +14,7 @@ export class AttendedCardiologyComponent implements OnInit {
   constructor(private activatedRouter:ActivatedRoute,private modalService: NgbModal,private patientService: PatientsService) {
     this.activatedRouter.queryParams.subscribe(res => {
       console.log("res",res.id);
-      this.patient = this.patientService.getPatientsMocked('queue').find(item => item.id == res.id);
+      this.patient = this.patientService.getPatientsMocked('attended').find(item => item.id == res.id);
       // console.log("patient",this.patient);
 
     })
