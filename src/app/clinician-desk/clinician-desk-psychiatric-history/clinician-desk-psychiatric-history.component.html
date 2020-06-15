@@ -1,0 +1,31 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Past Psychiatric History</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-past-psychritic-history></app-clinician-desk-past-psychritic-history>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Past Psychiatric Hospitalizations</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-past-psychritic-hospitalizations></app-clinician-desk-past-psychritic-hospitalizations>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>Substance Use History</a>
+    <ng-template ngbNavContent>
+     <app-clinician-desk-past-substance-use-history></app-clinician-desk-past-substance-use-history>
+    </ng-template>
+  </li>
+
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Psychiatric Social History</a>
+    <ng-template ngbNavContent>
+     <app-clinician-desk-psychiatric-social-history></app-clinician-desk-psychiatric-social-history>
+    </ng-template>
+  </li>
+
+
+</ul>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+

@@ -1,0 +1,30 @@
+.main-tabs{
+  > li{
+    min-width: 50%;
+    text-align: center;
+  }
+}
+
+
+:host ::ng-deep app-clinician-desk-histories-habits,:host ::ng-deep app-clinician-desk-psychiatric-history{
+  ul {
+    border-bottom: none;
+
+    > li {
+      white-space: pre-line;
+      position: relative;
+
+      a {
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 15px;
+      }
+    }
+  }
+
+}
+:host ::ng-deep input[type="text"], :host ::ng-deep select{
+  height: calc(1em + 0.75rem + 2px);
+  font-size: 14px;
+}
+
