@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PatientsListComponent } from './patients-list/patients-list.component';
 import { CardiologyFormComponent } from './cardiology-form/cardiology-form.component';
 import { AttendedCardiologyComponent } from './attended-cardiology/attended-cardiology.component';
+import {ClinicianDeskHomeComponent} from './clinician-desk/clinician-desk-home/clinician-desk-home.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:'attended-cardiology-form',
     component: AttendedCardiologyComponent
+  },
+  {
+    path:'clinician-desk',
+    component: ClinicianDeskHomeComponent
   }
 ];
 
