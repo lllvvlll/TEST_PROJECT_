@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-clinician-desk-medical-history',
@@ -7,7 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClinicianDeskMedicalHistoryComponent implements OnInit {
 
-  constructor() { }
+
+  inputs = [
+    'anemia',
+    'Hypertension',
+    'Musculoskeletal',
+    'Tuberculosis',
+    'CVS',
+    'Hypercholesterolemia',
+    'Neurological',
+    'Thyroid Disorder',
+    'Diabetes Millitus',
+    ' Ischemic Heart Disease',
+    'Respiratory',
+    'Valvular Heart Disease',
+    'Genitourinary',
+    'Liver & GIT',
+    'Renal Diseases',
+  ];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

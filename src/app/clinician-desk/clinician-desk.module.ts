@@ -20,6 +20,7 @@ import {ClinicianDeskPastPsychriticHistoryComponent} from './clinician-desk-past
 import {ClinicianDeskPastPsychriticHospitalizationsComponent} from './clinician-desk-past-psychritic-hospitalizations/clinician-desk-past-psychritic-hospitalizations.component';
 import {ClinicianDeskPastSubstanceUseHistoryComponent} from './clinician-desk-past-substance-use-history/clinician-desk-past-substance-use-history.component';
 import {ClinicianDeskPsychiatricSocialHistoryComponent} from './clinician-desk-psychiatric-social-history/clinician-desk-psychiatric-social-history.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {ClinicianDeskPsychiatricSocialHistoryComponent} from './clinician-desk-p
     CommonModule,
     NgMultiSelectDropDownModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    SharedModule
   ]
 })
 export class ClinicianDeskModule {

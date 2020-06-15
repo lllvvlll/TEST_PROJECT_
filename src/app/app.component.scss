@@ -217,6 +217,8 @@ nav.navbar ul li a i:before {
     
 }
 
+
+
 @font-face{
     font-family: "Century Gothic" ;
     src: url("../assets/fonts/Century Gothic 400.ttf") format(true type);
@@ -224,3 +226,17 @@ nav.navbar ul li a i:before {
   *{
           font-family: "Century Gothic";
       }
+
+
+:host ::ng-deep .f-14{
+  font-size: 14px;
+
+}
+:host ::ng-deep .input-group-append{
+  span{
+    padding: 8px;
+    img{
+      max-width: 18px !important;
+    }
+  }
+}

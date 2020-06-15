@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PatientsService } from '../services/patients.service';
 import { ActivatedRoute } from '@angular/router';
+import {HomeMedicationsModalComponent} from '../components/home-medications-modal/home-medications-modal.component';
 
 @Component({
   selector: 'app-attended-cardiology',
@@ -56,8 +57,9 @@ export class AttendedCardiologyComponent implements OnInit {
       // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-  openHomeMedications(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', size: 'xl', scrollable: true }).result.then((result) => {
+  openHomeMedications() {
+    this.modalService.open(HomeMedicationsModalComponent,
+      { ariaLabelledBy: 'modal-basic-title', size: 'xl', scrollable: true }).result.then((result) => {
       // this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

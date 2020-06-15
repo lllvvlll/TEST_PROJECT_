@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClinicianDeskPersonalHistoryComponent implements OnInit {
 
+  inputs = [
+    'Smoking',
+    'Substance Abuse',
+    'Tobacco',
+    'Behaviour Challenges',
+  ];
   constructor() { }
 
   ngOnInit() {

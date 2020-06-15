@@ -23,5 +23,8 @@
   }
 
 }
-
+:host ::ng-deep input[type="text"], :host ::ng-deep select{
+  height: calc(1em + 0.75rem + 2px);
+  font-size: 14px;
+}
 

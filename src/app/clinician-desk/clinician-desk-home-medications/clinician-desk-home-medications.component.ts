@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HomeMedicationsModalComponent} from "../../components/home-medications-modal/home-medications-modal.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-clinician-desk-home-medications',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClinicianDeskHomeMedicationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+  }
+
+  openHomeMedications() {
+    this.modalService.open(HomeMedicationsModalComponent,
+      { ariaLabelledBy: 'modal-basic-title', size: 'xl', scrollable: true }).result.then((result) => {
+    }, (reason) => {
+    });
   }
 
 }

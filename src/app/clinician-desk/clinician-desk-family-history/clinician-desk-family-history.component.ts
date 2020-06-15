@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClinicianDeskFamilyHistoryComponent implements OnInit {
 
+  inputs = [
+    'Asthma',
+    'Haemoglobinopathies',
+    'Inherited diseases',
+    'Congenital Anomalies',
+    'Hypertension',
+    'Endocrine Diseases',
+    'Diabetes Millitus',
+    'Infections',
+    'Malignancy',
+  ];
   constructor() { }
 
   ngOnInit() {
