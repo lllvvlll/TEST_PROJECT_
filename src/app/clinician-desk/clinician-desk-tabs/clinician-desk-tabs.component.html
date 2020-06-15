@@ -1,0 +1,17 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs main-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Histories & Habits</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-histories-habits></app-clinician-desk-histories-habits>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Psychiatric History</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-psychiatric-history></app-clinician-desk-psychiatric-history>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+

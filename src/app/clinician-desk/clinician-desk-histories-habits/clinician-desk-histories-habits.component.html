@@ -1,0 +1,37 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs histories-habits">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Medical History</a>
+    <ng-template ngbNavContent>
+       <app-clinician-desk-medical-history></app-clinician-desk-medical-history>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Surgeries & Hospitalization</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-surgeries-hospitalization></app-clinician-desk-surgeries-hospitalization>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>H.M</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-home-medications></app-clinician-desk-home-medications>
+    </ng-template>
+  </li>
+
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Family History</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-family-history></app-clinician-desk-family-history>
+    </ng-template>
+  </li>
+
+
+  <li [ngbNavItem]="5">
+    <a ngbNavLink>Personal History</a>
+    <ng-template ngbNavContent>
+      <app-clinician-desk-personal-history></app-clinician-desk-personal-history>
+    </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
