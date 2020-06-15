@@ -11,6 +11,8 @@ export class CheifComplaintsComponent implements OnInit {
   constructor() {
   }
 
+  chiefCompText = '';
+  chiefModel;
   dropdownList = [];
   selectedItems = [];
   dropdownSettings: IDropdownSettings = {};
@@ -61,9 +63,22 @@ export class CheifComplaintsComponent implements OnInit {
 
   onItemSelect(item: any) {
     console.log(item);
+    if (this.chiefCompText !== '') {
+      this.chiefCompText += '\n';
+    }
+    this.chiefCompText += '#' + this.dropdownList[item.item_id - 1].item_text + '#\n'
+    +
+    this.dropdownList[item.item_id - 1].item_description +
+    '\n#' + this.dropdownList[item.item_id - 1].item_text + '#'
+    ;
   }
 
   onSelectAll(items: any) {
     console.log(items);
+  }
+
+  onDeselect(item: any) {
+    const regExp = new RegExp('#' + item.item_text + '#[^]+#' + item.item_text + '#');
+    this.chiefCompText = this.chiefCompText.replace(regExp, '');
   }
 }

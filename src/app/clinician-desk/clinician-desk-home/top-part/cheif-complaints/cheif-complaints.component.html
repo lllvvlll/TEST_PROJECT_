@@ -4,6 +4,7 @@
   </div>
   <div class="col-sm-7">
     <ng-multiselect-dropdown
+
       id="cheif"
       [placeholder]="'Templates'"
       [data]="dropdownList"
@@ -11,11 +12,12 @@
       [settings]="dropdownSettings"
       (onSelect)="onItemSelect($event)"
       (onSelectAll)="onSelectAll($event)"
+      (onDeSelect)="onDeselect($event)"
     >
     </ng-multiselect-dropdown>
   </div>
 </div>
 <div class="row p-4">
-  <textarea class="form-control" aria-label="With textarea" id="chief-comp" 
-            style="height:200px"></textarea>
+  <textarea class="form-control" aria-label="With textarea" id="chief-comp" [(ngModel)]="chiefCompText"
+            style="height:200px">{{chiefCompText}}</textarea>
 </div>

@@ -1,1 +1,407 @@
-<p>review-of-systems works!</p>
+<div class="row">
+  <div class="col-sm-3">
+    <label igxLabel for="review">Review of Systems</label>
+    <i class="fa fa-arrow-down fa-lg" aria-hidden="true" style="color:#17A2B8"
+       (click)="openReviewOfSystemsModal(reviewOfSystem)"></i>
+  </div>
+
+</div>
+<div class="row p-2">
+  <textarea class="form-control" aria-label="With textarea" id="review"
+            style="height:200px"></textarea>
+</div>
+
+<ng-template #reviewOfSystem let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Review of Systems</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row border-bottom pb-2">
+      <div class="col-sm-3">
+        <label for="pma-unremarkable">PMA unremarkable</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="pma-unremarkable-yes" name="pmaUnremarkable" value="yes">
+          <label class="form-check-label" for="pma-unremarkable-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="pma-unremarkable-no" name="pmaUnremarkable" value="no">
+          <label class="form-check-label" for="pma-unremarkable-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="pma-unremarkable">
+      </div>
+    </div>
+
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="pma-retarded">PMA retarded</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="pma-retarded-yes" name="pmaRetarded" value="yes">
+          <label class="form-check-label" for="pma-retarded-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="pma-retarded-no" name="pmaRetarded" value="no">
+          <label class="form-check-label" for="pma-retarded-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="pma-retarded">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="pma-increased">PMA increased</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="pma-increased-yes" name="pmaIncreased" value="yes">
+          <label class="form-check-label" for="pma-increased-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="pma-increased-no" name="pmaIncreased" value="no">
+          <label class="form-check-label" for="pma-increased-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="pma-increased">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="sleep-disturbance">Sleep disturbance</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="sleep-disturbance-yes" name="sleepDisturbance" value="yes">
+          <label class="form-check-label" for="sleep-disturbance-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="sleep-disturbance-no" name="sleepDisturbance" value="no">
+          <label class="form-check-label" for="sleep-disturbance-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="sleep-disturbance">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="pma-stereotypical">PMA stereotypical</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="pma-stereotypical-yes" name="pmaStereotypical" value="yes">
+          <label class="form-check-label" for="pma-stereotypical-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="pma-stereotypical-no" name="pmaStereotypical" value="no">
+          <label class="form-check-label" for="pma-stereotypical-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="pma-stereotypical">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="interest">Interest</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="interest-yes" name="interest" value="yes">
+          <label class="form-check-label" for="interest-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="interest-no" name="interest" value="no">
+          <label class="form-check-label" for="interest-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="interest">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="pma-mannerism">PMA mannerism</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="pma-mannerism-yes" name="pmaMannerism" value="yes">
+          <label class="form-check-label" for="pma-mannerism-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="pma-mannerism-no" name="pmaMannerism" value="no">
+          <label class="form-check-label" for="pma-mannerism-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="pma-mannerism">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="guilt">Guilt</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="guilt-yes" name="guilt" value="yes">
+          <label class="form-check-label" for="guilt-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="guilt-no" name="guilt" value="no">
+          <label class="form-check-label" for="guilt-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="guilt">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Energy">Energy</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Energy-yes" name="Energy" value="yes">
+          <label class="form-check-label" for="Energy-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Energy-no" name="Energy" value="no">
+          <label class="form-check-label" for="Energy-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Energy">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Concentration">Concentration</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Concentration-yes" name="Concentration" value="yes">
+          <label class="form-check-label" for="Concentration-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Concentration-no" name="Concentration" value="no">
+          <label class="form-check-label" for="Concentration-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Concentration">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Anxiety">Anxiety</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Anxiety-yes" name="Anxiety" value="yes">
+          <label class="form-check-label" for="Anxiety-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Anxiety-no" name="Anxiety" value="no">
+          <label class="form-check-label" for="Anxiety-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Anxiety">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Appetite">Appetite</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Appetite-yes" name="Appetite" value="yes">
+          <label class="form-check-label" for="Appetite-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Appetite-no" name="Appetite" value="no">
+          <label class="form-check-label" for="Appetite-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Appetite">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Depression">Depression</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Depression-yes" name="Depression" value="yes">
+          <label class="form-check-label" for="Depression-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Depression-no" name="Depression" value="no">
+          <label class="form-check-label" for="Depression-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Depression">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Memory-loss">Memory loss</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Memory-loss-yes" name="Memory-loss" value="yes">
+          <label class="form-check-label" for="Memory-loss-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Memory-loss-no" name="Memory-loss" value="no">
+          <label class="form-check-label" for="Memory-loss-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Memory-loss">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Mental-disturbance">Mental disturbance</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Mental-disturbance-yes" name="Mental-disturbance" value="yes">
+          <label class="form-check-label" for="Mental-disturbance-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Mental-disturbance-no" name="Mental-disturbance" value="no">
+          <label class="form-check-label" for="Mental-disturbance-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Mental-disturbance">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Suicidal-ideation">Suicidal ideation</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Suicidal-ideation-yes" name="Suicidal-ideation" value="yes">
+          <label class="form-check-label" for="Suicidal-ideation-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Suicidal-ideation-no" name="Suicidal-ideation" value="no">
+          <label class="form-check-label" for="Suicidal-ideation-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Suicidal-ideation">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Hallucinations">Hallucinations</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Hallucinations-yes" name="Hallucinations" value="yes">
+          <label class="form-check-label" for="Hallucinations-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Hallucinations-no" name="Hallucinations" value="no">
+          <label class="form-check-label" for="Hallucinations-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Hallucinations">
+      </div>
+    </div>
+    <div class="row border-bottom pb-2 pt-2">
+      <div class="col-sm-3">
+        <label for="Paranoia">Paranoia</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" id="Paranoia-yes" name="Paranoia" value="yes">
+          <label class="form-check-label" for="Paranoia-yes">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" id="Paranoia-no" name="Paranoia" value="no">
+          <label class="form-check-label" for="Paranoia-no">No</label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="Paranoia">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
