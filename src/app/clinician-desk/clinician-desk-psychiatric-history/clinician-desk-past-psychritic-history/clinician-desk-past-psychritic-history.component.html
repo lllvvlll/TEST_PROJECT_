@@ -1,8 +1,5 @@
 <div class="container">
-  <div class="row past-medical-history">
-    <div class="col-sm-4">
-      <label class="f-14 font-weight-bold">Past Medical History</label>
-    </div>
+  <div class="row porphyritic-history mb-3">
     <div class="col-sm-4">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="no-known-history">
@@ -21,4 +18,177 @@
       </div>
     </div>
   </div>
+
+  <div class="row border-bottom pb-0 pt-0 mt-1" *ngFor="let question of questions.slice(0,5); let i=index">
+      <div class="col-sm-6">
+        <label class="f-14">{{question.question }}</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" [id]="question.label+'-yes'" [name]="question.label" value="yes" (change)="handleChangeRadio(question.id)">
+          <label class="form-check-label f-14" [for]="question.label+'-yes'">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" [id]="question.label + '-no'" [name]="question.label" value="no" (change)="handleChangeRadio(question.id)">
+          <label class="form-check-label f-14" [for]="question.label+'-no'">No</label>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [id]="question.label + '-input'" [disabled]="question.disabled">
+      </div>
+
+  </div>
+
+  <div class="row border-bottom pb-0 pt-0 mt-1">
+    <div class="col-sm-4">
+      <label class="f-14" for="number-of-attempts-input">Number of attempts</label>
+    </div>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="number-of-attempts-input">
+    </div>
+
+    <div class="col-sm-3">
+      <label class="f-14" for="last-attempts-was">Last attempt was:</label>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        <input class="form-control"  id="last-attempts-was"
+               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button" style="padding: 0 3px">
+             <img src="assets/calendar.png" height="20" />
+          </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row border-bottom pb-0 pt-0 mt-1">
+    <div class="col-sm-4">
+      <label class="f-14" for="methods-of-self-harm">Method of self harm</label>
+    </div>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="methods-of-self-harm">
+    </div>
+  </div>
+
+
+  <div class="row border-bottom pb-0 pt-0 mt-1" >
+    <div class="col-sm-6">
+      <label class="f-14">Attempt resulting in medical hospitalization</label>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" id="attempt-resulting-in-medical-hospitaliztion-yes" name="attempt-resulting-in-medical-hospitaliztion"
+               value="yes">
+        <label class="form-check-label f-14" for="attempt-resulting-in-medical-hospitaliztion-yes">Yes</label>
+      </div>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" id="attempt-resulting-in-medical-hospitaliztion-no" name="attempt-resulting-in-medical-hospitaliztion"
+               value="no">
+        <label class="form-check-label f-14" for="attempt-resulting-in-medical-hospitaliztion-no">No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row border-bottom pb-0 pt-0 mt-1">
+
+      <div class="col-sm-6">
+        <label class="f-14">{{questions[5].question }}</label>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input type="radio" [id]="questions[5].label+'-yes'" [name]="questions[5].label" value="yes" (change)="handleChangeRadio(questions[5].id)">
+          <label class="form-check-label f-14" [for]="questions[5].label+'-yes'">Yes</label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="form-check">
+
+          <input type="radio" [id]="questions[5].label + '-no'" [name]="questions[5].label" value="no" (change)="handleChangeRadio(questions[5].id)">
+          <label class="form-check-label f-14" [for]="questions[5].label+'-no'">No</label>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [id]="questions[5].label" [disabled]="questions[5].disabled">
+      </div>
+
+  </div>
+
+  <div class="row border-bottom pb-0 pt-0 mt-1">
+    <div class="col-sm-4">
+      <label class="f-14" for="aggression-towards">Aggression towards</label>
+    </div>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="aggression-towards">
+    </div>
+  </div>
+
+  <div class="row border-bottom pb-0 pt-0 mt-1" >
+    <div class="col-sm-6">
+      <label class="f-14">Legal charges stemming from aggression?</label>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" id="legal-charges-stemming-from-aggression-yes" name="legal-charges-stemming-from-aggression"
+               value="yes">
+        <label class="form-check-label f-14" for="legal-charges-stemming-from-aggression-yes">Yes</label>
+      </div>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" id="legal-charges-stemming-from-aggression-no" name="legal-charges-stemming-from-aggression"
+               value="no">
+        <label class="form-check-label f-14" for="legal-charges-stemming-from-aggression-no">No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row border-bottom pb-0 pt-0 mt-1" >
+    <div class="col-sm-6">
+      <label class="f-14">Incarceration stemming from aggression?</label>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" id="incarceration-stemming-from-aggression-yes" name="incarceration-stemming-from-aggression"
+               value="yes">
+        <label class="form-check-label f-14" for="incarceration-stemming-from-aggression-yes">Yes</label>
+      </div>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" id="incarceration-stemming-from-aggression-no" name="incarceration-stemming-from-aggression"
+               value="no">
+        <label class="form-check-label f-14" for="incarceration-stemming-from-aggression-no">No</label>
+      </div>
+    </div>
+  </div>
+  <div class="row border-bottom pb-0 pt-0 mt-1">
+
+    <div class="col-sm-6">
+      <label class="f-14">{{questions[6].question }}</label>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+        <input type="radio" [id]="questions[6].label+'-yes'" [name]="questions[6].label" value="yes" (change)="handleChangeRadio(questions[6].id)">
+        <label class="form-check-label f-14" [for]="questions[6].label+'-yes'">Yes</label>
+      </div>
+    </div>
+    <div class="col-sm-1">
+      <div class="form-check">
+
+        <input type="radio" [id]="questions[6].label + '-no'" [name]="questions[6].label" value="no" (change)="handleChangeRadio(questions[6].id)">
+        <label class="form-check-label f-14" [for]="questions[6].label+'-no'">No</label>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" [id]="questions[6].label" [disabled]="questions[6].disabled">
+    </div>
+
+  </div>
+
 </div>

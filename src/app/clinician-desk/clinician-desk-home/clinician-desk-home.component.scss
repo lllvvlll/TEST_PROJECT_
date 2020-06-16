@@ -1,4 +1,4 @@
-:host ::ng-deep input[type="text"], :host ::ng-deep select{
+:host ::ng-deep input:not([type="radio"]):not([type="checkbox"]), :host ::ng-deep select{
   height: calc(1em + 0.75rem + 2px);
   font-size: 14px;
 }
