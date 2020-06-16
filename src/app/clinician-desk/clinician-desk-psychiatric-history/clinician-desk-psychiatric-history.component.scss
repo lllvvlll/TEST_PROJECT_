@@ -3,3 +3,7 @@ ul{
     max-width: 25%;
   }
 }
+
+:host ::ng-deep input[type="radio"]{
+  display: block;
+}
