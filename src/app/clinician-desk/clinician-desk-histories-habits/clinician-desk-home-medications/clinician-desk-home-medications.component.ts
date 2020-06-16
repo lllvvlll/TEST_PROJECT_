@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HomeMedicationsModalComponent} from "../../components/home-medications-modal/home-medications-modal.component";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {HomeMedicationsModalComponent} from '../../../components/home-medications-modal/home-medications-modal.component';
 
 @Component({
   selector: 'app-clinician-desk-home-medications',
