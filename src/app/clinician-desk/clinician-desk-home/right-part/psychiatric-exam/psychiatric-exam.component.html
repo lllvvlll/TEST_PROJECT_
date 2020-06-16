@@ -1,0 +1,161 @@
+<div class="f-14 font-weight-bold">
+  Psychiatric Exam
+  <i class="fa fa-arrow-down fa-lg" aria-hidden="true" style="color:#17A2B8"
+     (click)="openPsychiatricExam(psychiatricExam)"></i>
+</div>
+<div class="row mb-1">
+  <div class="col-sm-4">
+    General
+  </div>
+  <div class="col-sm-7">
+    <input type="text" class="form-control">
+  </div>
+</div>
+<div class="row mb-1">
+  <div class="col-sm-4">
+    Speech
+  </div>
+  <div class="col-sm-7">
+    <input type="text" class="form-control">
+  </div>
+</div>
+<div class="row mb-1">
+  <div class="col-sm-4">
+    Through process/abstract reasoning
+  </div>
+  <div class="col-sm-7">
+    <input type="text" class="form-control">
+  </div>
+</div>
+<div class="row mb-1">
+  <div class="col-sm-4">
+    Associations
+  </div>
+  <div class="col-sm-7">
+    <input type="text" class="form-control">
+  </div>
+</div>
+<div class="row mb-1">
+  <div class="col-sm-4">
+    Abnormal thoughts
+  </div>
+  <div class="col-sm-7">
+    <input type="text" class="form-control">
+  </div>
+</div>
+<div class="row mb-1">
+  <div class="col-sm-4">
+    Judgement&insight
+  </div>
+  <div class="col-sm-7">
+    <input type="text" class="form-control">
+  </div>
+</div>
+
+<ng-template #psychiatricExam let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Psychiatric Exam Templates</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template1">
+          <label class="form-check-label" for="template1">
+            Template 1
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template2">
+          <label class="form-check-label" for="template2">
+            Template 2
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template3">
+          <label class="form-check-label" for="template3">
+            Template 3
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template4">
+          <label class="form-check-label" for="template4">
+            Template 4
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template5">
+          <label class="form-check-label" for="template5">
+            Template 5
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template6">
+          <label class="form-check-label" for="template6">
+            Template 6
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template7">
+          <label class="form-check-label" for="template7">
+            Template 7
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template8">
+          <label class="form-check-label" for="template8">
+            Template 8
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row pb-2">
+      <div class="col-4">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="template9">
+          <label class="form-check-label" for="template9">
+            Template 9
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>

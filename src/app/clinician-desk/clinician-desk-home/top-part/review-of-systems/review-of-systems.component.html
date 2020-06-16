@@ -8,7 +8,7 @@
 </div>
 <div class="row p-2 mt-3">
   <textarea class="form-control" aria-label="With textarea" id="review"
-            style="height:200px"></textarea>
+            style="height:200px">{{reviewSystem}}</textarea>
 </div>
 
 <ng-template #reviewOfSystem let-modal>
@@ -26,19 +26,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="pma-unremarkable-yes" name="pmaUnremarkable" value="yes">
+          <input type="radio" id="pma-unremarkable-yes" name="pmaUnremarkable" value="yes" (change)="pmaUnChanged($event)">
           <label class="form-check-label" for="pma-unremarkable-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="pma-unremarkable-no" name="pmaUnremarkable" value="no">
+          <input type="radio" id="pma-unremarkable-no" name="pmaUnremarkable" value="no" (change)="pmaUnChanged($event)">
           <label class="form-check-label" for="pma-unremarkable-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="pma-unremarkable">
+        <input type="text" class="form-control" id="pma-unremarkable" [(ngModel)]="pmaUnText" [disabled]="pmaUnDisabled">
       </div>
     </div>
 
@@ -48,19 +48,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="pma-retarded-yes" name="pmaRetarded" value="yes">
+          <input type="radio" id="pma-retarded-yes" name="pmaRetarded" value="yes" (change)="pmaRetDisabled=false">
           <label class="form-check-label" for="pma-retarded-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="pma-retarded-no" name="pmaRetarded" value="no">
+          <input type="radio" id="pma-retarded-no" name="pmaRetarded" value="no" (change)="pmaRetDisabled=false">
           <label class="form-check-label" for="pma-retarded-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="pma-retarded">
+        <input type="text" class="form-control" id="pma-retarded" [(ngModel)]="pmaRetText" [disabled]="pmaRetDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -69,19 +69,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="pma-increased-yes" name="pmaIncreased" value="yes">
+          <input type="radio" id="pma-increased-yes" name="pmaIncreased" value="yes" (change)="pmaIncDisabled=false">
           <label class="form-check-label" for="pma-increased-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="pma-increased-no" name="pmaIncreased" value="no">
+          <input type="radio" id="pma-increased-no" name="pmaIncreased" value="no" (change)="pmaIncDisabled=false">
           <label class="form-check-label" for="pma-increased-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="pma-increased">
+        <input type="text" class="form-control" id="pma-increased" [(ngModel)]="pmaIncText" [disabled]="pmaIncDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -90,19 +90,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="sleep-disturbance-yes" name="sleepDisturbance" value="yes">
+          <input type="radio" id="sleep-disturbance-yes" name="sleepDisturbance" value="yes" (change)="sleepDistDisabled=false">
           <label class="form-check-label" for="sleep-disturbance-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="sleep-disturbance-no" name="sleepDisturbance" value="no">
+          <input type="radio" id="sleep-disturbance-no" name="sleepDisturbance" value="no" (change)="sleepDistDisabled=false">
           <label class="form-check-label" for="sleep-disturbance-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="sleep-disturbance">
+        <input type="text" class="form-control" id="sleep-disturbance" [(ngModel)]="sleepDistText" [disabled]="sleepDistDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -111,19 +111,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="pma-stereotypical-yes" name="pmaStereotypical" value="yes">
+          <input type="radio" id="pma-stereotypical-yes" name="pmaStereotypical" value="yes" (change)="pmaStereoDisabled=false">
           <label class="form-check-label" for="pma-stereotypical-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="pma-stereotypical-no" name="pmaStereotypical" value="no">
+          <input type="radio" id="pma-stereotypical-no" name="pmaStereotypical" value="no" (change)="pmaStereoDisabled=false">
           <label class="form-check-label" for="pma-stereotypical-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="pma-stereotypical">
+        <input type="text" class="form-control" id="pma-stereotypical" [(ngModel)]="pmaStereoText" [disabled]="pmaStereoDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -132,19 +132,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="interest-yes" name="interest" value="yes">
+          <input type="radio" id="interest-yes" name="interest" value="yes" (change)="interestDisabled=false">
           <label class="form-check-label" for="interest-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="interest-no" name="interest" value="no">
+          <input type="radio" id="interest-no" name="interest" value="no" (change)="interestDisabled=false">
           <label class="form-check-label" for="interest-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="interest">
+        <input type="text" class="form-control" id="interest" [(ngModel)]="interestText" [disabled]="interestDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -153,19 +153,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="pma-mannerism-yes" name="pmaMannerism" value="yes">
+          <input type="radio" id="pma-mannerism-yes" name="pmaMannerism" value="yes" (change)="pmaMannDisabled=false">
           <label class="form-check-label" for="pma-mannerism-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="pma-mannerism-no" name="pmaMannerism" value="no">
+          <input type="radio" id="pma-mannerism-no" name="pmaMannerism" value="no" (change)="pmaMannDisabled=false">
           <label class="form-check-label" for="pma-mannerism-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="pma-mannerism">
+        <input type="text" class="form-control" id="pma-mannerism" [(ngModel)]="pmaMannText" [disabled]="pmaMannDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -174,19 +174,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="guilt-yes" name="guilt" value="yes">
+          <input type="radio" id="guilt-yes" name="guilt" value="yes" (change)="guiltDisabled=false">
           <label class="form-check-label" for="guilt-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="guilt-no" name="guilt" value="no">
+          <input type="radio" id="guilt-no" name="guilt" value="no" (change)="guiltDisabled=false">
           <label class="form-check-label" for="guilt-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="guilt">
+        <input type="text" class="form-control" id="guilt" [(ngModel)]="guiltText" [disabled]="guiltDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -195,19 +195,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Energy-yes" name="Energy" value="yes">
+          <input type="radio" id="Energy-yes" name="Energy" value="yes" (change)="energyDisabled=false">
           <label class="form-check-label" for="Energy-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Energy-no" name="Energy" value="no">
+          <input type="radio" id="Energy-no" name="Energy" value="no" (change)="energyDisabled=false">
           <label class="form-check-label" for="Energy-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Energy">
+        <input type="text" class="form-control" id="Energy" [(ngModel)]="energyText" [disabled]="energyDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -216,19 +216,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Concentration-yes" name="Concentration" value="yes">
+          <input type="radio" id="Concentration-yes" name="Concentration" value="yes" (change)="concentDisabled=false">
           <label class="form-check-label" for="Concentration-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Concentration-no" name="Concentration" value="no">
+          <input type="radio" id="Concentration-no" name="Concentration" value="no" (change)="concentDisabled=false">
           <label class="form-check-label" for="Concentration-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Concentration">
+        <input type="text" class="form-control" id="Concentration" [(ngModel)]="concentText" [disabled]="concentDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -237,19 +237,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Anxiety-yes" name="Anxiety" value="yes">
+          <input type="radio" id="Anxiety-yes" name="Anxiety" value="yes" (change)="anxDisabled=false">
           <label class="form-check-label" for="Anxiety-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Anxiety-no" name="Anxiety" value="no">
+          <input type="radio" id="Anxiety-no" name="Anxiety" value="no" (change)="anxDisabled=false">
           <label class="form-check-label" for="Anxiety-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Anxiety">
+        <input type="text" class="form-control" id="Anxiety" [(ngModel)]="anxText" [disabled]="anxDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -258,19 +258,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Appetite-yes" name="Appetite" value="yes">
+          <input type="radio" id="Appetite-yes" name="Appetite" value="yes" (change)="appDisabled=false">
           <label class="form-check-label" for="Appetite-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Appetite-no" name="Appetite" value="no">
+          <input type="radio" id="Appetite-no" name="Appetite" value="no" (change)="appDisabled=false">
           <label class="form-check-label" for="Appetite-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Appetite">
+        <input type="text" class="form-control" id="Appetite" [(ngModel)]="appText" [disabled]="appDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -279,19 +279,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Depression-yes" name="Depression" value="yes">
+          <input type="radio" id="Depression-yes" name="Depression" value="yes" (change)="depresDisabled=false">
           <label class="form-check-label" for="Depression-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Depression-no" name="Depression" value="no">
+          <input type="radio" id="Depression-no" name="Depression" value="no" (change)="depresDisabled=false">
           <label class="form-check-label" for="Depression-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Depression">
+        <input type="text" class="form-control" id="Depression" [(ngModel)]="depresText" [disabled]="depresDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -300,19 +300,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Memory-loss-yes" name="Memory-loss" value="yes">
+          <input type="radio" id="Memory-loss-yes" name="Memory-loss" value="yes" (change)="memLossDisabled=false">
           <label class="form-check-label" for="Memory-loss-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Memory-loss-no" name="Memory-loss" value="no">
+          <input type="radio" id="Memory-loss-no" name="Memory-loss" value="no" (change)="memLossDisabled=false">
           <label class="form-check-label" for="Memory-loss-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Memory-loss">
+        <input type="text" class="form-control" id="Memory-loss" [(ngModel)]="memLossText" [disabled]="memLossDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -321,19 +321,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Mental-disturbance-yes" name="Mental-disturbance" value="yes">
+          <input type="radio" id="Mental-disturbance-yes" name="Mental-disturbance" value="yes" (change)="mentalDisDisabled=false">
           <label class="form-check-label" for="Mental-disturbance-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Mental-disturbance-no" name="Mental-disturbance" value="no">
+          <input type="radio" id="Mental-disturbance-no" name="Mental-disturbance" value="no" (change)="mentalDisDisabled=false">
           <label class="form-check-label" for="Mental-disturbance-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Mental-disturbance">
+        <input type="text" class="form-control" id="Mental-disturbance" [(ngModel)]="mentalDisText" [disabled]="mentalDisDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -342,19 +342,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Suicidal-ideation-yes" name="Suicidal-ideation" value="yes">
+          <input type="radio" id="Suicidal-ideation-yes" name="Suicidal-ideation" value="yes" (change)="suicIdeaDisabled=false">
           <label class="form-check-label" for="Suicidal-ideation-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Suicidal-ideation-no" name="Suicidal-ideation" value="no">
+          <input type="radio" id="Suicidal-ideation-no" name="Suicidal-ideation" value="no" (change)="suicIdeaDisabled=false">
           <label class="form-check-label" for="Suicidal-ideation-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Suicidal-ideation">
+        <input type="text" class="form-control" id="Suicidal-ideation" [(ngModel)]="suicIdeaText" [disabled]="suicIdeaDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -363,19 +363,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Hallucinations-yes" name="Hallucinations" value="yes">
+          <input type="radio" id="Hallucinations-yes" name="Hallucinations" value="yes" (change)="halluciDisabled=false">
           <label class="form-check-label" for="Hallucinations-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Hallucinations-no" name="Hallucinations" value="no">
+          <input type="radio" id="Hallucinations-no" name="Hallucinations" value="no" (change)="halluciDisabled=false">
           <label class="form-check-label" for="Hallucinations-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Hallucinations">
+        <input type="text" class="form-control" id="Hallucinations" [(ngModel)]="halluciText" [disabled]="halluciDisabled">
       </div>
     </div>
     <div class="row border-bottom pb-2 pt-2">
@@ -384,19 +384,19 @@
       </div>
       <div class="col-sm-1">
         <div class="form-check">
-          <input type="radio" id="Paranoia-yes" name="Paranoia" value="yes">
+          <input type="radio" id="Paranoia-yes" name="Paranoia" value="yes" (change)="paranDisabled=false">
           <label class="form-check-label" for="Paranoia-yes">Yes</label>
         </div>
       </div>
       <div class="col-sm-1">
         <div class="form-check">
 
-          <input type="radio" id="Paranoia-no" name="Paranoia" value="no">
+          <input type="radio" id="Paranoia-no" name="Paranoia" value="no" (change)="paranDisabled=false">
           <label class="form-check-label" for="Paranoia-no">No</label>
         </div>
       </div>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="Paranoia">
+        <input type="text" class="form-control" id="Paranoia" [(ngModel)]="paranText" [disabled]="paranDisabled">
       </div>
     </div>
   </div>
