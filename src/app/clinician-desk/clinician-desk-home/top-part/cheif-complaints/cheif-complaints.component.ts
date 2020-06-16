@@ -15,7 +15,7 @@ export class CheifComplaintsComponent implements OnInit {
   chiefModel;
   dropdownList = [];
   selectedItems = [];
-  dropdownSettings: IDropdownSettings = {};
+  dropdownSettings: IDropdownSettings ;
   firstItemDescription = 'Patients Comes in for Psychiatric evaluation of Panic Attacks\n' +
     'The Patient experiences a discrete period of intense fear or discomfort which develops' +
     ' abruptly and reached a peak within 10 minutes.\n' +
@@ -57,7 +57,8 @@ export class CheifComplaintsComponent implements OnInit {
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       itemsShowLimit: 3,
-      allowSearchFilter: true
+      allowSearchFilter: true,
+      enableCheckAll: false
     };
   }
 
