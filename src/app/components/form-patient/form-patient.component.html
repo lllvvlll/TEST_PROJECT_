@@ -1,6 +1,6 @@
-<div class="row pt-2 border-bottom shadow-sm form-patient-style" style="position: fixed; background-color: #fff; z-index: 100; margin-top: -7px;">
+<div class="row pt-2 border-bottom shadow-sm form-patient-style" [ngClass]="shrink ? ' shrinked' : ''">
     <div class="col-sm-2" style="text-align: center;">
-        <img [alt]="patient.name" class="img-thumbnail  rounded-circle" [src]="patient.imageUrl" style="max-height: 90px;"/>
+        <img [ngStyle]="{height: shrink? '0px' : '80px', border: shrink? 'none' : 'rounded-circle'}" [alt]="patient.name" class="img-thumbnail  rounded-circle image-style" [src]="patient.imageUrl" [ngClass]="shrink ? ' shrinked' : ''"/>
     </div>
     <div class="col-sm-3 border-left align-self-center">
         <!-- Patient: -->

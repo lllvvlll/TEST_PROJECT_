@@ -1,3 +1,21 @@
-.form-patient-style{
-    width: calc(100% - 266px);
+.form-patient-style {
+  //width: calc(100% - 266px);
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  z-index: 100;
+  margin-top: -7px;
+  height: 100px;
+  transition: height 1s;
+  transition-timing-function: ease;
+}
+
+.shrinked {
+  height: 56px;
+}
+
+.image-style {
+  transition: height 1s;
+  transition-timing-function: ease;
+  height: 80px;
 }
