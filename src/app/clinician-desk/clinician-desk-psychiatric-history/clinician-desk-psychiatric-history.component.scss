@@ -1,8 +1,12 @@
-ul{
-  > li{
-    max-width: 25%;
-  }
-}
+//ul{
+//  margin-top: -9px;
+//  > li{
+//    max-width: 25%;
+//    a{
+//      border: none;
+//    }
+//  }
+//}
 
 :host ::ng-deep input[type="radio"]{
   display: block;

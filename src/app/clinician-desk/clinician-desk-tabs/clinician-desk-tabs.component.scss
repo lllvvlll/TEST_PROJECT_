@@ -1,14 +1,34 @@
-.main-tabs{
-  > li{
+.main-tabs {
+  > li {
     min-width: 50%;
     text-align: center;
+
+    a {
+      //&.active{
+      //  background-color: #4cbacb
+      //}
+    }
   }
+
+  //:host ::ng-deep ul{
+  //  margin-top: -8px;
+  //  > li{
+  //    max-width: 20%;
+  //    a{
+  //      //border: none;
+  //      //&.active{
+  //      //  background-color: #4cbacb
+  //      //}
+  //    }
+  //  }
+  //}
 }
 
 
-:host ::ng-deep app-clinician-desk-histories-habits,:host ::ng-deep app-clinician-desk-psychiatric-history{
+:host ::ng-deep app-clinician-desk-histories-habits, :host ::ng-deep app-clinician-desk-psychiatric-history {
   ul {
     border-bottom: none;
+    margin-top: -8px;
 
     > li {
       white-space: pre-line;
@@ -18,11 +38,28 @@
         padding: 0.5rem;
         text-align: center;
         font-size: 15px;
+
+        &.active{
+          border-top: 0;
+          border-color: unset !important;
+          border: none;
+          border-bottom: 1px solid #dee2e6;
+        }
+
       }
     }
   }
 
 }
+
+:host ::ng-deep app-clinician-desk-psychiatric-history {
+  ul {
+    > li {
+      max-width: 25%;
+    }
+  }
+}
+
 //:host ::ng-deep input[type="text"], :host ::ng-deep select{
 //  height: calc(1em + 0.75rem + 2px);
 //  font-size: 14px;
